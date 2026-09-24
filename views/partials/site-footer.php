@@ -31,7 +31,7 @@ $mainSite    = (string) config('app.main_site_url');
         </nav>
     </div>
     <div class="border-t border-line">
-        <div class="mx-auto max-w-page px-4 py-5 text-[13px] text-ink-muted sm:px-6 lg:px-8" style="padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px))">
+        <div class="mx-auto max-w-page px-4 py-5 text-center text-[13px] text-ink-muted sm:px-6 lg:px-8" style="padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px))">
             <p>&copy; <?= date('Y') ?> Khan Travel. All rights reserved.</p>
         </div>
     </div>
