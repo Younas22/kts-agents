@@ -1,0 +1,15 @@
+{
+    "default": "en",
+    "languages": {
+        "en": {
+            "name": "English",
+            "native": "English",
+            "active": true
+        },
+        "de": {
+            "name": "German",
+            "native": "Deutsch",
+            "active": false
+        }
+    }
+}

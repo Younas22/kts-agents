@@ -20,14 +20,14 @@ function handle_partner_submission(array $input): array
     $limit = config('rate_limit');
     if (!rate_limit_hit('partner-apply|' . client_ip(), $limit['max_attempts'], $limit['window'])) {
         log_warning('Partner application rate limited', ['ip' => client_ip()]);
-        return ['status' => 429, 'payload' => ['ok' => false, 'message' => MSG_RATE_LIMIT]];
+        return ['status' => 429, 'payload' => ['ok' => false, 'message' => t('messages.rate_limit')]];
     }
 
     // 2) CSRF
     if (!csrf_verify($input['_token'] ?? null)) {
         return ['status' => 403, 'payload' => [
             'ok'         => false,
-            'message'    => MSG_CSRF,
+            'message'    => t('messages.csrf'),
             'csrf_token' => csrf_token(),
         ]];
     }
@@ -39,7 +39,7 @@ function handle_partner_submission(array $input): array
             'ip'    => client_ip(),
             'email' => mask_email(clean_text($input['email'] ?? '')),
         ]);
-        return ['status' => 422, 'payload' => ['ok' => false, 'message' => MSG_SERVER_ERROR]];
+        return ['status' => 422, 'payload' => ['ok' => false, 'message' => t('messages.server_error')]];
     }
 
     // 4) Validation
@@ -47,11 +47,11 @@ function handle_partner_submission(array $input): array
 
     // 5) CAPTCHA (only checked once the form itself is valid, so a solved widget isn't wasted)
     if (!$errors && !captcha_verify($input['frc-captcha-response'] ?? null)) {
-        $errors['captcha'] = 'Please complete the verification and try again.';
+        $errors['captcha'] = t('validation.captcha');
     }
 
     if ($errors) {
-        return ['status' => 422, 'payload' => ['ok' => false, 'message' => MSG_VALIDATION, 'errors' => $errors]];
+        return ['status' => 422, 'payload' => ['ok' => false, 'message' => t('messages.validation'), 'errors' => $errors]];
     }
 
     // 6) Duplicate email + 7) insert
@@ -60,12 +60,12 @@ function handle_partner_submission(array $input): array
     } catch (DuplicateEmailException) {
         return ['status' => 409, 'payload' => [
             'ok'      => false,
-            'message' => MSG_DUPLICATE,
-            'errors'  => ['email' => 'This email address is already registered or has an existing application.'],
+            'message' => t('messages.duplicate'),
+            'errors'  => ['email' => t('messages.duplicate_field')],
         ]];
     } catch (Throwable $e) {
         log_error('Partner application could not be saved', ['exception' => $e, 'email' => mask_email($data['email'])]);
-        return ['status' => 500, 'payload' => ['ok' => false, 'message' => MSG_SERVER_ERROR]];
+        return ['status' => 500, 'payload' => ['ok' => false, 'message' => t('messages.server_error')]];
     }
 
     log_info('Partner application created', [
@@ -174,7 +174,11 @@ function create_partner_application(array $data): array
         'email'                  => $data['email'],
         'phone'                  => $data['phone'],
         'previous_contact'       => $data['previous_contact'],
-        'previous_contact_label' => previous_contact_label($data['previous_contact']),
+        'previous_contact_label' => previous_contact_label($data['previous_contact'], 'en'), // admin email is English
         'submitted_at'           => date('j M Y, H:i') . ' ' . config('app.timezone'),
+        'submitted_ts'           => time(),
+        // Unique per submission (user IDs can be reused after rows are deleted) – used for email idempotency keys.
+        'submission_id'          => bin2hex(random_bytes(8)),
+        'language'               => current_language(), // language the applicant used → confirmation email
     ];
 }

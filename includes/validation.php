@@ -1,22 +1,19 @@
 <?php
 /**
  * Server-side validation for the partner application form.
+ * Messages come from the translation files (validation.*).
  */
 
 declare(strict_types=1);
 
-/** Allowed "previous contact" values: stored key => label shown to people. */
-const PREVIOUS_CONTACT_OPTIONS = [
-    'none'                 => "I haven't had any contact",
-    'sales_team'           => 'Sales Team',
-    'business_development' => 'Business Development',
-    'support_team'         => 'Support Team',
-    'other'                => 'Other',
-];
+/** Allowed "previous contact" values (stored in users.previous_contact). Labels: form.previous_contact.options.* */
+const PREVIOUS_CONTACT_OPTIONS = ['none', 'sales_team', 'business_development', 'support_team', 'other'];
 
-function previous_contact_label(?string $key): string
+function previous_contact_label(?string $key, ?string $lang = null): string
 {
-    return PREVIOUS_CONTACT_OPTIONS[$key ?? ''] ?? 'Not specified';
+    return in_array($key, PREVIOUS_CONTACT_OPTIONS, true)
+        ? (string) t('form.previous_contact.options.' . $key, [], $lang)
+        : 'Not specified';
 }
 
 /** Trim, remove control/invisible characters and collapse internal whitespace. */
@@ -52,52 +49,52 @@ function validate_partner_application(array $input): array
     // Company
     $len = mb_strlen($data['company_name']);
     if ($len === 0) {
-        $errors['company_name'] = 'Please enter your company name.';
+        $errors['company_name'] = t('validation.company_required');
     } elseif ($len < 2 || $len > 255) {
-        $errors['company_name'] = 'Company name must be between 2 and 255 characters.';
+        $errors['company_name'] = t('validation.company_length');
     } elseif (preg_match('/[<>{}]/', $data['company_name'])) {
-        $errors['company_name'] = 'Company name contains characters that are not allowed.';
+        $errors['company_name'] = t('validation.company_chars');
     }
 
     // First / last name
-    foreach (['first_name' => 'first name', 'last_name' => 'last name'] as $field => $label) {
+    foreach (['first_name', 'last_name'] as $field) {
         $len = mb_strlen($data[$field]);
         if ($len === 0) {
-            $errors[$field] = "Please enter your {$label}.";
+            $errors[$field] = t("validation.{$field}_required");
         } elseif ($len > 100) {
-            $errors[$field] = ucfirst($label) . ' must be 100 characters or fewer.';
+            $errors[$field] = t("validation.{$field}_length");
         } elseif (!preg_match($namePattern, $data[$field])) {
-            $errors[$field] = 'Please use letters only (spaces, hyphens and apostrophes are fine).';
+            $errors[$field] = t('validation.name_chars');
         }
     }
 
     // Email
     if ($data['email'] === '') {
-        $errors['email'] = 'Please enter your business email address.';
+        $errors['email'] = t('validation.email_required');
     } elseif (mb_strlen($data['email']) > 254 || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Please enter a valid email address, e.g. name@youragency.com.';
+        $errors['email'] = t('validation.email_invalid');
     }
 
     // Phone: digits with optional +, spaces, dashes, dots and brackets; 7–15 digits (E.164 max).
     $digits = preg_replace('/\D+/', '', $data['phone']) ?? '';
     if ($data['phone'] === '') {
-        $errors['phone'] = 'Please enter your phone number.';
+        $errors['phone'] = t('validation.phone_required');
     } elseif (mb_strlen($data['phone']) > 30 || !preg_match('/^\+?[0-9\s().\-]+$/', $data['phone'])
         || strlen($digits) < 7 || strlen($digits) > 15) {
-        $errors['phone'] = 'Please enter a valid phone number, e.g. +92 300 1234567.';
+        $errors['phone'] = t('validation.phone_invalid');
     }
 
     // Previous contact
-    if (!array_key_exists($data['previous_contact'], PREVIOUS_CONTACT_OPTIONS)) {
-        $errors['previous_contact'] = 'Please choose an option from the list.';
+    if (!in_array($data['previous_contact'], PREVIOUS_CONTACT_OPTIONS, true)) {
+        $errors['previous_contact'] = t('validation.previous_contact');
     }
 
     // Legal confirmations
     if (($input['authorized_representative'] ?? '') !== '1') {
-        $errors['authorized_representative'] = 'Please confirm that you are authorized to represent this company.';
+        $errors['authorized_representative'] = t('validation.authorized');
     }
     if (($input['privacy_consent'] ?? '') !== '1') {
-        $errors['privacy_consent'] = 'Please accept the Privacy Policy to continue.';
+        $errors['privacy_consent'] = t('validation.privacy');
     }
 
     return [$data, $errors];

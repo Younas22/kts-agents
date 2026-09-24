@@ -248,3 +248,32 @@ DELETE FROM users WHERE email = 'your-test-address@example.com' AND approval_sta
 ## 10. Logs
 
 `storage/logs/app-YYYY-MM-DD.log` records: applications created (user ID, agent code, masked email), email send results with Resend IDs or errors, CAPTCHA/API problems, honeypot and rate-limit hits, and unexpected exceptions. PHP-level errors go to `storage/logs/php-errors.log`.
+
+---
+
+## 11. Languages (English / German)
+
+All visible text lives in JSON files – no database:
+
+| File | Purpose |
+|---|---|
+| `lang/en.json` | English texts (reference file) |
+| `lang/de.json` | German texts (same keys as English) |
+| `lang/languages.json` | Default language + which languages are active |
+
+- Visitors switch language with the dropdown in the header (`?lang=de`). The choice is remembered in the `kt_lang` cookie for one year.
+- New visitors get the **default language**. The dropdown is hidden when only one language is active.
+- A missing text falls back to the default language, then to English, so the page never breaks.
+- The **applicant confirmation email** is sent in the language the applicant used. The **admin email** is always English and shows the applicant's language.
+- Search engines get `hreflang` links for every active language.
+
+### Language settings page
+
+`/language-settings` lets you choose the default language and turn languages on or off (it writes `lang/languages.json`).
+It is protected by `LANGUAGE_ADMIN_PASSWORD` in `.env`; if that is empty the page is disabled. Login attempts are rate-limited and the page is `noindex`.
+The web server needs write permission on `lang/languages.json`.
+
+### Edit or add texts
+
+- Edit a text: change it in `lang/en.json` / `lang/de.json` (keep the keys and `:placeholders` such as `:email`, `:company`, `:year`).
+- Add a language: copy `lang/en.json` to e.g. `lang/fr.json`, translate it, add `"fr": { "name": "French", "native": "Français", "active": false }` to `lang/languages.json`, then activate it on `/language-settings`. The settings page lists any missing texts.

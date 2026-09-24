@@ -5,12 +5,6 @@
 
 declare(strict_types=1);
 
-const MSG_VALIDATION   = 'Please check the highlighted fields and try again.';
-const MSG_DUPLICATE    = 'This email address is already registered or has an existing application. Please contact our team if you need assistance.';
-const MSG_SERVER_ERROR = 'Something went wrong while submitting your application. Please try again or contact our team.';
-const MSG_CSRF         = 'Your session has expired. Please submit the form again.';
-const MSG_RATE_LIMIT   = 'Too many attempts from your network. Please wait a few minutes and try again.';
-
 /**
  * Read a config value using dot notation, e.g. config('mail.from').
  */

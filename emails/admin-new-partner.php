@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin notification: "New Khan Travel B2B Partner Application".
+ * Admin notification: "New Khan Travel Services B2B Partner Application".
  *
  * @var array  $application
  * @var string $review_url  empty when ADMIN_REVIEW_URL is not configured
@@ -23,13 +23,14 @@ $rows = [
         ? '<a href="tel:' . e($phoneTel) . '" style="color:#0077BE; text-decoration:none;">' . e($phone) . '</a>'
         : '—',
     'Previous Contact' => e($a['previous_contact_label']),
+    'Language'         => e(languages_config()['languages'][$a['language'] ?? '']['name'] ?? strtoupper((string) ($a['language'] ?? '—'))),
     'Application Status' => '<span style="display:inline-block; padding:3px 10px; background-color:#FFF7E6; border:1px solid #F5D9A3; border-radius:12px; font-size:12px; line-height:18px; font-weight:bold; color:#9A5B00;">Pending Review</span>',
     'Submitted At'     => e($a['submitted_at']),
 ];
 
 ob_start();
 ?>
-<p style="margin:0 0 24px 0;">A travel agency has applied to become a Khan Travel B2B partner. The application is waiting for your review.</p>
+<p style="margin:0 0 24px 0;">A travel agency has applied to become a Khan Travel Services B2B partner. The application is waiting for your review.</p>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E3E8EF; border-radius:6px;">
 <?php $i = 0; foreach ($rows as $label => $value): $border = $i++ === 0 ? '' : 'border-top:1px solid #EEF1F5;'; ?>
@@ -87,7 +88,7 @@ ob_start();
 <?php
 $content = (string) ob_get_clean();
 
-$subject     = 'New Khan Travel B2B Partner Application';
+$subject     = 'New Khan Travel Services B2B Partner Application';
 $preheader   = $a['company_name'] . ' applied to become a B2B partner – pending review.';
 $eyebrow     = 'Admin notification';
 $heading     = 'New Partner Application';

@@ -71,8 +71,8 @@ $mainSiteUrl = rtrim((string) env('MAIN_SITE_URL', ''), '/');
 
 return [
     'app' => [
-        'name'               => 'Khan Travel',
-        'platform'           => 'Khan Travel',
+        'name'               => 'Khan Travel Services',
+        'platform'           => 'Khan Travel Services',
         'env'                => env('APP_ENV', 'production'),
         'debug'              => env_bool('APP_DEBUG'),
         'url'                => $appUrl,
@@ -81,6 +81,8 @@ return [
         // Empty → this app's own /privacy-policy page.
         'privacy_policy_url' => env('PRIVACY_POLICY_URL', ''),
         'contact_email'      => env('CONTACT_EMAIL', ''),
+        // Password for /language-settings. Empty = settings page disabled.
+        'language_admin_password' => env('LANGUAGE_ADMIN_PASSWORD', ''),
     ],
 
     'db' => [
@@ -95,7 +97,7 @@ return [
         'resend_api_key'   => env('RESEND_API_KEY', ''),
         'resend_api_url'   => rtrim((string) env('RESEND_API_URL', 'https://api.resend.com'), '/'),
         'from'             => env('MAIL_FROM') ?? env('MAIL_FROM_ADDRESS', ''),
-        'from_name'        => env('MAIL_FROM_NAME', 'Khan Travel'),
+        'from_name'        => env('MAIL_FROM_NAME', 'Khan Travel Services'),
         'reply_to'         => env('MAIL_REPLY_TO', ''),
         'admin_email'      => env('ADMIN_EMAIL', ''),
         // Empty → the logo is embedded in each email as an inline (CID) image.

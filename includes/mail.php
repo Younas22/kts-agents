@@ -165,29 +165,42 @@ function send_partner_application_emails(array $application): void
             'review_url'  => $reviewUrl !== '' ? str_replace('{id}', (string) $application['id'], $reviewUrl) : '',
         ];
 
+        // Admin email is always English.
+        [$html, $text] = with_language('en', static fn () => [
+            render_email('admin-new-partner', $vars),
+            render_email('admin-new-partner.txt', $vars),
+        ]);
+
         send_mail([
             'to'              => $adminRecipients,
-            'subject'         => 'New Khan Travel B2B Partner Application',
-            'html'            => render_email('admin-new-partner', $vars),
-            'text'            => render_email('admin-new-partner.txt', $vars),
+            'subject'         => 'New Khan Travel Services B2B Partner Application',
+            'html'            => $html,
+            'text'            => $text,
             'reply_to'        => $application['email'],
-            'idempotency_key' => 'partner-admin-' . $application['id'],
+            'idempotency_key' => 'partner-admin-' . $application['submission_id'],
             'attachments'     => $attachments,
         ]);
     } else {
         log_warning('ADMIN_EMAIL is not configured – admin notification skipped');
     }
 
-    // 2) Applicant confirmation
+    // 2) Applicant confirmation – in the language the applicant used on the form.
+    $lang = is_active_language($application['language'] ?? null) ? $application['language'] : default_language();
     $vars = $common + ['application' => $application];
+
+    [$subject, $html, $text] = with_language($lang, static fn () => [
+        (string) t('email.confirmation.subject'),
+        render_email('partner-confirmation', $vars),
+        render_email('partner-confirmation.txt', $vars),
+    ]);
 
     send_mail([
         'to'              => $application['email'],
-        'subject'         => 'We Received Your Khan Travel B2B Partner Application',
-        'html'            => render_email('partner-confirmation', $vars),
-        'text'            => render_email('partner-confirmation.txt', $vars),
+        'subject'         => $subject,
+        'html'            => $html,
+        'text'            => $text,
         'reply_to'        => (string) config('mail.reply_to'),
-        'idempotency_key' => 'partner-confirmation-' . $application['id'],
+        'idempotency_key' => 'partner-confirmation-' . $application['submission_id'],
         'attachments'     => $attachments,
     ]);
 }

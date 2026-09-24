@@ -1,0 +1,377 @@
+{
+    "site": {
+        "brand": "Khan Travel Services",
+        "program": "B2B Partner Program",
+        "skip": "Skip to content",
+        "logo_alt": "Khan Travel Services"
+    },
+    "nav": {
+        "primary": "Primary",
+        "benefits": "Benefits",
+        "how": "How It Works",
+        "apply": "Apply",
+        "cta": "Become a Partner",
+        "cta_short": "Apply",
+        "language": "Language",
+        "choose_language": "Choose language"
+    },
+    "footer": {
+        "label": "Footer",
+        "privacy": "Privacy Policy",
+        "website": "Khan Travel Services Website",
+        "copyright": "© :year Khan Travel Services. All rights reserved."
+    },
+    "meta": {
+        "partner_title": "Become a B2B Partner | Khan Travel Services",
+        "partner_description": "Apply to become a Khan Travel Services B2B partner. Give your travel agency a professional booking platform for flights, hotels, tours and Umrah.",
+        "notfound_title": "Page Not Found | Khan Travel Services",
+        "notfound_description": "The page you're looking for doesn't exist or may have moved.",
+        "privacy_title": "Privacy Policy | Khan Travel Services",
+        "privacy_description": "How Khan Travel Services handles personal data submitted through the B2B partner application form."
+    },
+    "hero": {
+        "badge_iata": "IATA Certified",
+        "badge_program": "Khan Travel Services B2B Partner Program",
+        "title_start": "Become a Khan Travel Services",
+        "title_highlight": "B2B Partner",
+        "lead": "Grow your travel business with a powerful B2B booking platform built for modern travel agencies and agents.",
+        "text": "Submit your details to apply for a Khan Travel Services B2B partnership. Our team will review your application and contact you regarding the next steps.",
+        "cta_primary": "Become a Partner",
+        "cta_secondary": "How It Works",
+        "iata_title": "IATA Certified",
+        "iata_text": "Book with an internationally recognised travel company",
+        "iata_alt": "IATA – International Air Transport Association",
+        "trust": [
+            "Takes about 2 minutes",
+            "Reviewed by our team",
+            "Secure submission"
+        ]
+    },
+    "airlines": {
+        "title": "Book flights with leading airlines worldwide"
+    },
+    "benefits": {
+        "eyebrow": "Partner benefits",
+        "title": "Everything You Need to Grow Your Travel Business",
+        "lead": "One platform to book, manage and grow your agency's travel sales, with the Khan Travel Services team behind you.",
+        "items": [
+            {
+                "title": "B2B Booking Platform",
+                "text": "Search and book flights, hotels, tours, Umrah and visa services from one platform built for agencies."
+            },
+            {
+                "title": "Easy Partner Onboarding",
+                "text": "Apply in a few minutes. Once you are approved, we help your team get set up on the platform."
+            },
+            {
+                "title": "Professional Agent Dashboard",
+                "text": "Your own agent code, account overview and booking history in one clear dashboard."
+            },
+            {
+                "title": "Manage Your Bookings",
+                "text": "Follow every booking from request to confirmation, with traveller details and status in one list."
+            },
+            {
+                "title": "Travel Business Tools",
+                "text": "Agent wallet, top-up requests and booking records that support your daily operations."
+            },
+            {
+                "title": "Dedicated Partner Support",
+                "text": "Talk to a team that works with travel agencies every day and understands B2B travel."
+            }
+        ]
+    },
+    "how": {
+        "eyebrow": "How it works",
+        "title": "Three simple steps to partnership",
+        "lead": "A short application, a personal review, and your agency is ready to book.",
+        "step": "Step",
+        "steps": [
+            {
+                "title": "Submit Your Details",
+                "text": "Tell us about your travel agency and business."
+            },
+            {
+                "title": "Application Review",
+                "text": "Our team reviews your partner application."
+            },
+            {
+                "title": "Start Your B2B Journey",
+                "text": "Once approved, your team can start using the Khan Travel Services B2B platform."
+            }
+        ]
+    },
+    "apply": {
+        "eyebrow": "Partner application",
+        "title": "Become a Khan Travel Services Partner",
+        "lead": "Complete the form below and our team will review your application.",
+        "points": [
+            {
+                "title": "Quick to complete",
+                "text": "A few short fields. It takes about two minutes."
+            },
+            {
+                "title": "Your data stays private",
+                "text": "We only use your details to review your application and contact you."
+            },
+            {
+                "title": "Confirmation by email",
+                "text": "You receive a confirmation right away, and we contact you about the next steps."
+            }
+        ],
+        "contact": "Questions before you apply? Email us at :email."
+    },
+    "form": {
+        "required_note": "Fields marked with :star are required.",
+        "asterisk": "an asterisk",
+        "honeypot": "Leave this field empty",
+        "section_company": "Company details",
+        "section_contact": "Contact person",
+        "section_legal": "Legal Requirements",
+        "company": {
+            "label": "Company",
+            "placeholder": "Company incl. legal form (e.g. Ltd.)",
+            "help": "Registered name of your company"
+        },
+        "first_name": {
+            "label": "First Name"
+        },
+        "last_name": {
+            "label": "Last Name"
+        },
+        "email": {
+            "label": "Business Email Address",
+            "placeholder": "name@youragency.com",
+            "help": "Please use an email address you can access."
+        },
+        "phone": {
+            "label": "Phone Number",
+            "placeholder": "+92 300 1234567",
+            "help": "Include your country code. WhatsApp number is fine."
+        },
+        "previous_contact": {
+            "label": "Have you already had contact with one of our employees?",
+            "options": {
+                "none": "I haven't had any contact",
+                "sales_team": "Sales Team",
+                "business_development": "Business Development",
+                "support_team": "Support Team",
+                "other": "Other"
+            }
+        },
+        "authorized": "I confirm that I am authorized to represent the company stated above.",
+        "privacy_consent": "I hereby confirm my consent to the collection and use of my personal data according to the :link.",
+        "privacy_link": "Privacy Policy",
+        "new_tab": "(opens in a new tab)",
+        "captcha_placeholder_title": "CAPTCHA placeholder (development only)",
+        "captcha_placeholder_text": "Friendly Captcha is not configured. Set FRIENDLY_CAPTCHA_SITE_KEY and FRIENDLY_CAPTCHA_SECRET_KEY in .env to enable bot protection.",
+        "submit": "Submit Partner Application",
+        "submitting": "Submitting…",
+        "submitting_status": "Submitting your application, please wait.",
+        "secure_note": "Your details are sent securely and reviewed by our team."
+    },
+    "success": {
+        "title": "Application Submitted Successfully",
+        "text": "Thank you for your interest in becoming a Khan Travel Services partner. We have received your application and our team will contact you regarding the next steps.",
+        "next_title": "What happens next",
+        "next": [
+            "Check your inbox for a confirmation email.",
+            "Our team reviews your application.",
+            "We contact you about the next steps."
+        ],
+        "back": "Back to Khan Travel Services"
+    },
+    "cta": {
+        "title": "Ready to grow with Khan Travel Services?",
+        "text": "Join our B2B partner network and give your agency a professional platform for everyday bookings.",
+        "button": "Become a Partner",
+        "points": [
+            {
+                "title": "Secure application",
+                "text": "Your details are sent securely and protected against spam."
+            },
+            {
+                "title": "Reviewed by people",
+                "text": "Every application is checked personally by the Khan Travel Services team."
+            },
+            {
+                "title": "Partner support",
+                "text": "Help from a team that works with travel agencies every day."
+            }
+        ]
+    },
+    "messages": {
+        "validation": "Please check the highlighted fields and try again.",
+        "duplicate": "This email address is already registered or has an existing application. Please contact our team if you need assistance.",
+        "duplicate_field": "This email address is already registered or has an existing application.",
+        "server_error": "Something went wrong while submitting your application. Please try again or contact our team.",
+        "csrf": "Your session has expired. Please submit the form again.",
+        "rate_limit": "Too many attempts from your network. Please wait a few minutes and try again.",
+        "network": "We could not reach our server. Please check your internet connection and try again.",
+        "captcha_pending": "The verification is still running. Please wait a moment and submit again.",
+        "captcha_missing": "Please complete the verification."
+    },
+    "validation": {
+        "company_required": "Please enter your company name.",
+        "company_length": "Company name must be between 2 and 255 characters.",
+        "company_chars": "Company name contains characters that are not allowed.",
+        "first_name_required": "Please enter your first name.",
+        "first_name_length": "First name must be 100 characters or fewer.",
+        "last_name_required": "Please enter your last name.",
+        "last_name_length": "Last name must be 100 characters or fewer.",
+        "name_chars": "Please use letters only (spaces, hyphens and apostrophes are fine).",
+        "email_required": "Please enter your business email address.",
+        "email_invalid": "Please enter a valid email address, e.g. name@youragency.com.",
+        "phone_required": "Please enter your phone number.",
+        "phone_invalid": "Please enter a valid phone number, e.g. +92 300 1234567.",
+        "previous_contact": "Please choose an option from the list.",
+        "authorized": "Please confirm that you are authorized to represent this company.",
+        "privacy": "Please accept the Privacy Policy to continue.",
+        "captcha": "Please complete the verification and try again."
+    },
+    "notfound": {
+        "sr_prefix": "Error 404:",
+        "title": "Page Not Found",
+        "text": "The page you're looking for doesn't exist or may have moved.",
+        "back": "Back to Khan Travel Services",
+        "cta": "Become a Partner"
+    },
+    "privacy": {
+        "eyebrow": "Legal",
+        "title": "Privacy Policy",
+        "intro": "This policy explains how Khan Travel Services handles the personal data you share with us when you apply to become a B2B partner.",
+        "last_updated": "Last updated: :date",
+        "date": "24 September 2026",
+        "toc": "On this page",
+        "who": {
+            "title": "1. Who is responsible",
+            "intro": "The controller responsible for processing your personal data on this website is:",
+            "website": "Website",
+            "email": "Email"
+        },
+        "data": {
+            "title": "2. What data we collect",
+            "form_title": "Partner application form",
+            "form_intro": "When you apply to become a partner, we collect the information you enter:",
+            "form_items": [
+                "Company name, including its legal form",
+                "First and last name of the contact person",
+                "Business email address and phone number",
+                "Whether you have already been in contact with one of our employees",
+                "Your confirmation that you may represent the company, and your consent to this policy",
+                "Date and time of your application"
+            ],
+            "tech_title": "Technical data",
+            "tech_text": "To keep the form secure and protect it against spam and abuse, we process your IP address for a short time. It is used to limit repeated submission attempts and may appear in our security logs. When you visit the page, our web server also records standard access data (such as time of access and browser type) in its log files."
+        },
+        "purpose": {
+            "title": "3. Why we use your data",
+            "items": [
+                {
+                    "strong": "To review your application and contact you",
+                    "text": "about a possible partnership. This is necessary to take steps at your request before entering into a contract (Art. 6(1)(b) GDPR)."
+                },
+                {
+                    "strong": "To send you a confirmation email",
+                    "text": "and to notify our team about your application (Art. 6(1)(b) GDPR)."
+                },
+                {
+                    "strong": "To keep this website secure",
+                    "text": "and prevent spam, fraud and abuse. This is our legitimate interest (Art. 6(1)(f) GDPR)."
+                },
+                {
+                    "strong": "Based on your consent,",
+                    "text": "which you give with the checkbox in the form (Art. 6(1)(a) GDPR). You can withdraw your consent at any time with effect for the future."
+                }
+            ],
+            "outro": "If your application is approved, your details are used to set up your partner account on our B2B booking platform. We do not sell your data and do not use it for advertising without your permission."
+        },
+        "recipients": {
+            "title": "4. Who receives your data",
+            "intro": "Your application is only seen by the Khan Travel Services team responsible for partner applications. We also work with carefully selected service providers who process data on our behalf:",
+            "items": [
+                {
+                    "strong": "Hosting:",
+                    "text": "our web hosting provider stores the website and the application database."
+                },
+                {
+                    "strong": "Email delivery:",
+                    "text": "confirmation and notification emails are sent through Resend (Resend, Inc., USA). Where data is transferred outside the EU/EEA, this is based on appropriate safeguards such as the EU Standard Contractual Clauses."
+                },
+                {
+                    "strong": "Bot protection:",
+                    "text": "if activated, the form uses Friendly Captcha (Friendly Captcha GmbH, Germany) to check that submissions come from real people. It works without cookies and without tracking."
+                }
+            ],
+            "outro": "We only pass on data to authorities if we are legally required to do so."
+        },
+        "cookies": {
+            "title": "5. Cookies and tracking",
+            "paragraphs": [
+                "This page uses two technically necessary cookies: a session cookie that protects the form against misuse (for example, cross-site request forgery) and is deleted when you close your browser, and a language cookie that remembers your selected language for one year. We do not use analytics, advertising or tracking cookies.",
+                "Fonts and scripts are loaded from our own server, so no data is sent to font providers such as Google Fonts."
+            ]
+        },
+        "retention": {
+            "title": "6. How long we keep your data",
+            "paragraphs": [
+                "If your application is approved, we keep your data for as long as the partnership exists, and afterwards as long as legal retention periods (for example under commercial and tax law) require.",
+                "If your application does not lead to a partnership, we delete your data as soon as it is no longer needed, at the latest 12 months after our decision, unless you have agreed to a longer storage period. Security data such as IP-based rate-limit entries are deleted automatically after a short time."
+            ]
+        },
+        "rights": {
+            "title": "7. Your rights",
+            "intro": "Under the GDPR you have the right to:",
+            "items": [
+                "access the personal data we hold about you (Art. 15)",
+                "have incorrect data corrected (Art. 16)",
+                "have your data deleted (Art. 17) or its processing restricted (Art. 18)",
+                "receive your data in a portable format (Art. 20)",
+                "object to processing based on our legitimate interests (Art. 21)",
+                "withdraw your consent at any time (Art. 7(3))"
+            ],
+            "outro": "You also have the right to lodge a complaint with a data protection supervisory authority, in particular in the EU member state where you live or work."
+        },
+        "contact": {
+            "title": "8. Contact",
+            "text": "If you have questions about this policy or want to use your rights, please contact us at :email. We will answer as quickly as possible.",
+            "update": "We may update this policy when our services or legal requirements change. The current version is always available on this page."
+        },
+        "cta": {
+            "title": "Ready to apply?",
+            "text": "Become a Khan Travel Services B2B partner in a few minutes.",
+            "button": "Become a Partner"
+        }
+    },
+    "email": {
+        "program": "B2B Partner Program",
+        "copyright": "© :year Khan Travel Services. All rights reserved.",
+        "confirmation": {
+            "subject": "We Received Your Khan Travel Services B2B Partner Application",
+            "preheader": "Your application for :company is pending review. We will contact you about the next steps.",
+            "eyebrow": "Partner application",
+            "heading": "Application Received",
+            "hello": "Hello :name,",
+            "thanks": "Thank you for your interest in becoming a Khan Travel Services B2B partner.",
+            "received": "We have successfully received your partner application for :company.",
+            "review": "Our team will review your information and contact you regarding the next steps.",
+            "status_label": "Application Status",
+            "status": "Pending Review",
+            "company": "Company",
+            "phone": "Phone",
+            "submitted": "Submitted",
+            "next_title": "What happens next",
+            "next": [
+                "Our team reviews your application.",
+                "We contact you about the next steps.",
+                "Once approved, your team can start using the Khan Travel Services B2B platform."
+            ],
+            "signoff": "Thank you,",
+            "team": "Khan Travel Services Team",
+            "footer_note": "You received this email because this address was used to apply for a Khan Travel Services B2B partnership. If this was not you, simply reply and let us know."
+        }
+    },
+    "formats": {
+        "datetime": "j M Y, H:i"
+    }
+}

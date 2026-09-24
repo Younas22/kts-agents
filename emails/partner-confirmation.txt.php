@@ -1,19 +1,26 @@
 <?php
-/** Plain-text version of the applicant confirmation. @var array $application */
+/** Plain-text version of the applicant confirmation (applicant's language). @var array $application */
 $a = $application;
 ?>
-Hello <?= $a['first_name'] ?>,
+<?= t('email.confirmation.hello', ['name' => $a['first_name']]) ?>
 
-Thank you for your interest in becoming a Khan Travel B2B partner.
 
-We have successfully received your partner application for <?= $a['company_name'] ?>.
+<?= t('email.confirmation.thanks') ?>
 
-Our team will review your information and contact you regarding the next steps.
 
-Application Status: Pending Review
+<?= t('email.confirmation.received', ['company' => $a['company_name']]) ?>
 
-Thank you,
-Khan Travel Team
+
+<?= t('email.confirmation.review') ?>
+
+
+<?= t('email.confirmation.status_label') ?>: <?= t('email.confirmation.status') ?>
+
+
+<?= t('email.confirmation.signoff') ?>
+
+<?= t('email.confirmation.team') ?>
+
 
 --
-Khan Travel · B2B Partner Program
+Khan Travel Services · <?= t('email.program') ?>

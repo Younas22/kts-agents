@@ -15,8 +15,8 @@ $homeUrl     = $mainSite !== '' ? $mainSite : url('become-a-partner');
 $sectionBase = url('become-a-partner');
 
 $meta = [
-    'title'       => 'Page Not Found | Khan Travel',
-    'description' => "The page you're looking for doesn't exist or may have moved.",
+    'title'       => t('meta.notfound_title'),
+    'description' => t('meta.notfound_description'),
     'noindex'     => true,
 ];
 
@@ -31,15 +31,15 @@ require APP_ROOT . '/views/partials/head.php';
     <div class="relative mx-auto w-full max-w-xl px-4 py-20 text-center sm:px-6 sm:py-28">
         <p class="fade-up text-[5.5rem] font-bold leading-none tracking-[-0.05em] text-brand-500 sm:text-[7.5rem]" aria-hidden="true">404</p>
         <h1 class="fade-up fade-up-delay mt-4 text-2xl font-bold tracking-[-0.02em] text-ink sm:text-[2rem]">
-            <span class="sr-only">Error 404: </span>Page Not Found
+            <span class="sr-only"><?= te('notfound.sr_prefix') ?> </span><?= te('notfound.title') ?>
         </h1>
         <p class="fade-up fade-up-delay mx-auto mt-4 max-w-md text-pretty text-base leading-relaxed text-ink-muted sm:text-[17px]">
-            The page you're looking for doesn't exist or may have moved.
+            <?= te('notfound.text') ?>
         </p>
 
         <div class="fade-up fade-up-delay mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="<?= e($homeUrl) ?>" class="btn-primary h-12 px-6 text-base">Back to Khan Travel</a>
-            <a href="<?= e(url('become-a-partner')) ?>" class="btn-secondary h-12 px-6 text-base">Become a Partner</a>
+            <a href="<?= e($homeUrl) ?>" class="btn-primary h-12 px-6 text-base"><?= te('notfound.back') ?></a>
+            <a href="<?= e(url('become-a-partner')) ?>" class="btn-secondary h-12 px-6 text-base"><?= te('notfound.cta') ?></a>
         </div>
     </div>
 </main>

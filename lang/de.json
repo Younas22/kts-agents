@@ -1,0 +1,377 @@
+{
+    "site": {
+        "brand": "Khan Travel Services",
+        "program": "B2B-Partnerprogramm",
+        "skip": "Zum Inhalt springen",
+        "logo_alt": "Khan Travel Services"
+    },
+    "nav": {
+        "primary": "Hauptnavigation",
+        "benefits": "Vorteile",
+        "how": "So funktioniert's",
+        "apply": "Bewerben",
+        "cta": "Partner werden",
+        "cta_short": "Bewerben",
+        "language": "Sprache",
+        "choose_language": "Sprache wählen"
+    },
+    "footer": {
+        "label": "Fußzeile",
+        "privacy": "Datenschutz",
+        "website": "Khan Travel Services Website",
+        "copyright": "© :year Khan Travel Services. Alle Rechte vorbehalten."
+    },
+    "meta": {
+        "partner_title": "B2B-Partner werden | Khan Travel Services",
+        "partner_description": "Werden Sie B2B-Partner von Khan Travel Services. Nutzen Sie für Ihr Reisebüro eine professionelle Buchungsplattform für Flüge, Hotels, Touren und Umrah.",
+        "notfound_title": "Seite nicht gefunden | Khan Travel Services",
+        "notfound_description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+        "privacy_title": "Datenschutzerklärung | Khan Travel Services",
+        "privacy_description": "Wie Khan Travel Services personenbezogene Daten aus dem B2B-Partnerformular verarbeitet."
+    },
+    "hero": {
+        "badge_iata": "IATA-zertifiziert",
+        "badge_program": "Khan Travel Services B2B-Partnerprogramm",
+        "title_start": "Werden Sie Khan Travel Services",
+        "title_highlight": "B2B-Partner",
+        "lead": "Bauen Sie Ihr Reisegeschäft aus – mit einer leistungsstarken B2B-Buchungsplattform für moderne Reisebüros und Reiseagenten.",
+        "text": "Senden Sie uns Ihre Angaben, um sich für eine B2B-Partnerschaft mit Khan Travel Services zu bewerben. Unser Team prüft Ihre Bewerbung und meldet sich bei Ihnen zu den nächsten Schritten.",
+        "cta_primary": "Partner werden",
+        "cta_secondary": "So funktioniert's",
+        "iata_title": "IATA-zertifiziert",
+        "iata_text": "Buchen Sie bei einem international anerkannten Reiseunternehmen",
+        "iata_alt": "IATA – International Air Transport Association",
+        "trust": [
+            "Dauert nur ca. 2 Minuten",
+            "Persönlich geprüft",
+            "Sichere Übermittlung"
+        ]
+    },
+    "airlines": {
+        "title": "Buchen Sie Flüge mit führenden Airlines weltweit"
+    },
+    "benefits": {
+        "eyebrow": "Partnervorteile",
+        "title": "Alles, was Sie für Ihr Reisegeschäft brauchen",
+        "lead": "Eine Plattform zum Buchen, Verwalten und Ausbauen Ihres Reiseverkaufs – mit dem Khan Travel Services Team an Ihrer Seite.",
+        "items": [
+            {
+                "title": "B2B-Buchungsplattform",
+                "text": "Flüge, Hotels, Touren, Umrah und Visa-Services auf einer Plattform suchen und buchen – gemacht für Reisebüros."
+            },
+            {
+                "title": "Einfaches Onboarding",
+                "text": "Bewerben Sie sich in wenigen Minuten. Nach der Freigabe helfen wir Ihrem Team beim Einstieg."
+            },
+            {
+                "title": "Professionelles Agenten-Dashboard",
+                "text": "Eigener Agenten-Code, Kontoübersicht und Buchungshistorie in einem übersichtlichen Dashboard."
+            },
+            {
+                "title": "Buchungen verwalten",
+                "text": "Verfolgen Sie jede Buchung von der Anfrage bis zur Bestätigung – mit Reisendendaten und Status in einer Liste."
+            },
+            {
+                "title": "Tools für Ihr Reisegeschäft",
+                "text": "Agenten-Guthaben, Aufladeanfragen und Buchungsübersichten für Ihr Tagesgeschäft."
+            },
+            {
+                "title": "Persönlicher Partner-Support",
+                "text": "Sprechen Sie mit einem Team, das täglich mit Reisebüros arbeitet und B2B-Reisen versteht."
+            }
+        ]
+    },
+    "how": {
+        "eyebrow": "So funktioniert's",
+        "title": "In drei einfachen Schritten zur Partnerschaft",
+        "lead": "Eine kurze Bewerbung, eine persönliche Prüfung – und Ihr Reisebüro kann buchen.",
+        "step": "Schritt",
+        "steps": [
+            {
+                "title": "Angaben senden",
+                "text": "Erzählen Sie uns von Ihrem Reisebüro und Ihrem Geschäft."
+            },
+            {
+                "title": "Prüfung der Bewerbung",
+                "text": "Unser Team prüft Ihre Partnerbewerbung."
+            },
+            {
+                "title": "B2B-Partnerschaft starten",
+                "text": "Nach der Freigabe kann Ihr Team die Khan Travel Services B2B-Plattform nutzen."
+            }
+        ]
+    },
+    "apply": {
+        "eyebrow": "Partnerbewerbung",
+        "title": "Werden Sie Khan Travel Services Partner",
+        "lead": "Füllen Sie das folgende Formular aus – unser Team prüft Ihre Bewerbung.",
+        "points": [
+            {
+                "title": "Schnell ausgefüllt",
+                "text": "Nur wenige kurze Felder. Das dauert etwa zwei Minuten."
+            },
+            {
+                "title": "Ihre Daten bleiben vertraulich",
+                "text": "Wir nutzen Ihre Angaben nur, um Ihre Bewerbung zu prüfen und Sie zu kontaktieren."
+            },
+            {
+                "title": "Bestätigung per E-Mail",
+                "text": "Sie erhalten sofort eine Bestätigung, und wir melden uns zu den nächsten Schritten."
+            }
+        ],
+        "contact": "Fragen vor der Bewerbung? Schreiben Sie uns an :email."
+    },
+    "form": {
+        "required_note": "Mit :star gekennzeichnete Felder sind Pflichtfelder.",
+        "asterisk": "einem Sternchen",
+        "honeypot": "Dieses Feld bitte leer lassen",
+        "section_company": "Unternehmensdaten",
+        "section_contact": "Ansprechpartner",
+        "section_legal": "Rechtliche Angaben",
+        "company": {
+            "label": "Unternehmen",
+            "placeholder": "Firma inkl. Rechtsform (z. B. GmbH)",
+            "help": "Eingetragener Name Ihres Unternehmens"
+        },
+        "first_name": {
+            "label": "Vorname"
+        },
+        "last_name": {
+            "label": "Nachname"
+        },
+        "email": {
+            "label": "Geschäftliche E-Mail-Adresse",
+            "placeholder": "name@ihr-reisebuero.de",
+            "help": "Bitte verwenden Sie eine E-Mail-Adresse, auf die Sie Zugriff haben."
+        },
+        "phone": {
+            "label": "Telefonnummer",
+            "placeholder": "+49 30 1234567",
+            "help": "Bitte mit Ländervorwahl. Eine WhatsApp-Nummer ist ebenfalls möglich."
+        },
+        "previous_contact": {
+            "label": "Hatten Sie bereits Kontakt mit einem unserer Mitarbeitenden?",
+            "options": {
+                "none": "Ich hatte noch keinen Kontakt",
+                "sales_team": "Vertrieb",
+                "business_development": "Business Development",
+                "support_team": "Support-Team",
+                "other": "Sonstiges"
+            }
+        },
+        "authorized": "Ich bestätige, dass ich berechtigt bin, das oben genannte Unternehmen zu vertreten.",
+        "privacy_consent": "Hiermit willige ich in die Erhebung und Verwendung meiner personenbezogenen Daten gemäß der :link ein.",
+        "privacy_link": "Datenschutzerklärung",
+        "new_tab": "(öffnet in einem neuen Tab)",
+        "captcha_placeholder_title": "CAPTCHA-Platzhalter (nur Entwicklung)",
+        "captcha_placeholder_text": "Friendly Captcha ist nicht eingerichtet. Setzen Sie FRIENDLY_CAPTCHA_SITE_KEY und FRIENDLY_CAPTCHA_SECRET_KEY in der .env, um den Bot-Schutz zu aktivieren.",
+        "submit": "Partnerbewerbung absenden",
+        "submitting": "Wird gesendet …",
+        "submitting_status": "Ihre Bewerbung wird gesendet, bitte warten.",
+        "secure_note": "Ihre Angaben werden sicher übermittelt und von unserem Team geprüft."
+    },
+    "success": {
+        "title": "Bewerbung erfolgreich gesendet",
+        "text": "Vielen Dank für Ihr Interesse an einer Partnerschaft mit Khan Travel Services. Wir haben Ihre Bewerbung erhalten, und unser Team meldet sich bei Ihnen zu den nächsten Schritten.",
+        "next_title": "So geht es weiter",
+        "next": [
+            "Prüfen Sie Ihr Postfach auf die Bestätigungs-E-Mail.",
+            "Unser Team prüft Ihre Bewerbung.",
+            "Wir melden uns bei Ihnen zu den nächsten Schritten."
+        ],
+        "back": "Zurück zu Khan Travel Services"
+    },
+    "cta": {
+        "title": "Bereit, mit Khan Travel Services zu wachsen?",
+        "text": "Werden Sie Teil unseres B2B-Partnernetzwerks und nutzen Sie eine professionelle Plattform für Ihre täglichen Buchungen.",
+        "button": "Partner werden",
+        "points": [
+            {
+                "title": "Sichere Bewerbung",
+                "text": "Ihre Angaben werden sicher übermittelt und vor Spam geschützt."
+            },
+            {
+                "title": "Persönlich geprüft",
+                "text": "Jede Bewerbung wird vom Khan Travel Services Team persönlich geprüft."
+            },
+            {
+                "title": "Partner-Support",
+                "text": "Hilfe von einem Team, das täglich mit Reisebüros arbeitet."
+            }
+        ]
+    },
+    "messages": {
+        "validation": "Bitte prüfen Sie die markierten Felder und versuchen Sie es erneut.",
+        "duplicate": "Diese E-Mail-Adresse ist bereits registriert oder es liegt schon eine Bewerbung vor. Bitte kontaktieren Sie unser Team, wenn Sie Hilfe benötigen.",
+        "duplicate_field": "Diese E-Mail-Adresse ist bereits registriert oder es liegt schon eine Bewerbung vor.",
+        "server_error": "Beim Senden Ihrer Bewerbung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie unser Team.",
+        "csrf": "Ihre Sitzung ist abgelaufen. Bitte senden Sie das Formular erneut.",
+        "rate_limit": "Zu viele Versuche aus Ihrem Netzwerk. Bitte warten Sie einige Minuten und versuchen Sie es erneut.",
+        "network": "Unser Server ist nicht erreichbar. Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+        "captcha_pending": "Die Überprüfung läuft noch. Bitte warten Sie einen Moment und senden Sie erneut.",
+        "captcha_missing": "Bitte schließen Sie die Überprüfung ab."
+    },
+    "validation": {
+        "company_required": "Bitte geben Sie den Namen Ihres Unternehmens ein.",
+        "company_length": "Der Firmenname muss zwischen 2 und 255 Zeichen lang sein.",
+        "company_chars": "Der Firmenname enthält unzulässige Zeichen.",
+        "first_name_required": "Bitte geben Sie Ihren Vornamen ein.",
+        "first_name_length": "Der Vorname darf höchstens 100 Zeichen lang sein.",
+        "last_name_required": "Bitte geben Sie Ihren Nachnamen ein.",
+        "last_name_length": "Der Nachname darf höchstens 100 Zeichen lang sein.",
+        "name_chars": "Bitte verwenden Sie nur Buchstaben (Leerzeichen, Bindestriche und Apostrophe sind erlaubt).",
+        "email_required": "Bitte geben Sie Ihre geschäftliche E-Mail-Adresse ein.",
+        "email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. name@ihr-reisebuero.de.",
+        "phone_required": "Bitte geben Sie Ihre Telefonnummer ein.",
+        "phone_invalid": "Bitte geben Sie eine gültige Telefonnummer ein, z. B. +49 30 1234567.",
+        "previous_contact": "Bitte wählen Sie eine Option aus der Liste.",
+        "authorized": "Bitte bestätigen Sie, dass Sie berechtigt sind, dieses Unternehmen zu vertreten.",
+        "privacy": "Bitte stimmen Sie der Datenschutzerklärung zu, um fortzufahren.",
+        "captcha": "Bitte schließen Sie die Überprüfung ab und versuchen Sie es erneut."
+    },
+    "notfound": {
+        "sr_prefix": "Fehler 404:",
+        "title": "Seite nicht gefunden",
+        "text": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+        "back": "Zurück zu Khan Travel Services",
+        "cta": "Partner werden"
+    },
+    "privacy": {
+        "eyebrow": "Rechtliches",
+        "title": "Datenschutzerklärung",
+        "intro": "Diese Erklärung beschreibt, wie Khan Travel Services mit den personenbezogenen Daten umgeht, die Sie uns bei Ihrer Bewerbung als B2B-Partner übermitteln.",
+        "last_updated": "Stand: :date",
+        "date": "24. September 2026",
+        "toc": "Auf dieser Seite",
+        "who": {
+            "title": "1. Verantwortlicher",
+            "intro": "Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten auf dieser Website ist:",
+            "website": "Website",
+            "email": "E-Mail"
+        },
+        "data": {
+            "title": "2. Welche Daten wir erheben",
+            "form_title": "Partnerbewerbungsformular",
+            "form_intro": "Wenn Sie sich als Partner bewerben, erheben wir die von Ihnen eingegebenen Angaben:",
+            "form_items": [
+                "Firmenname einschließlich Rechtsform",
+                "Vor- und Nachname des Ansprechpartners",
+                "Geschäftliche E-Mail-Adresse und Telefonnummer",
+                "Ob Sie bereits Kontakt mit einem unserer Mitarbeitenden hatten",
+                "Ihre Bestätigung, dass Sie das Unternehmen vertreten dürfen, sowie Ihre Einwilligung in diese Erklärung",
+                "Datum und Uhrzeit Ihrer Bewerbung"
+            ],
+            "tech_title": "Technische Daten",
+            "tech_text": "Um das Formular zu schützen und Spam sowie Missbrauch zu verhindern, verarbeiten wir kurzzeitig Ihre IP-Adresse. Sie dient dazu, wiederholte Absendeversuche zu begrenzen, und kann in unseren Sicherheitsprotokollen erscheinen. Beim Aufruf der Seite speichert unser Webserver außerdem übliche Zugriffsdaten (z. B. Zeitpunkt des Zugriffs und Browsertyp) in seinen Logdateien."
+        },
+        "purpose": {
+            "title": "3. Wofür wir Ihre Daten verwenden",
+            "items": [
+                {
+                    "strong": "Zur Prüfung Ihrer Bewerbung und zur Kontaktaufnahme",
+                    "text": "wegen einer möglichen Partnerschaft. Dies ist zur Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage erforderlich (Art. 6 Abs. 1 lit. b DSGVO)."
+                },
+                {
+                    "strong": "Zum Versand einer Bestätigungs-E-Mail",
+                    "text": "und zur Benachrichtigung unseres Teams über Ihre Bewerbung (Art. 6 Abs. 1 lit. b DSGVO)."
+                },
+                {
+                    "strong": "Zur Sicherheit dieser Website",
+                    "text": "und zur Verhinderung von Spam, Betrug und Missbrauch. Dies ist unser berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)."
+                },
+                {
+                    "strong": "Auf Grundlage Ihrer Einwilligung,",
+                    "text": "die Sie über das Kontrollkästchen im Formular erteilen (Art. 6 Abs. 1 lit. a DSGVO). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen."
+                }
+            ],
+            "outro": "Wird Ihre Bewerbung angenommen, verwenden wir Ihre Angaben zur Einrichtung Ihres Partnerkontos auf unserer B2B-Buchungsplattform. Wir verkaufen Ihre Daten nicht und nutzen sie ohne Ihre Erlaubnis nicht für Werbung."
+        },
+        "recipients": {
+            "title": "4. Wer Ihre Daten erhält",
+            "intro": "Ihre Bewerbung sieht nur das für Partnerbewerbungen zuständige Team von Khan Travel Services. Außerdem arbeiten wir mit sorgfältig ausgewählten Dienstleistern zusammen, die Daten in unserem Auftrag verarbeiten:",
+            "items": [
+                {
+                    "strong": "Hosting:",
+                    "text": "Unser Hosting-Anbieter speichert die Website und die Bewerbungsdatenbank."
+                },
+                {
+                    "strong": "E-Mail-Versand:",
+                    "text": "Bestätigungs- und Benachrichtigungs-E-Mails werden über Resend (Resend, Inc., USA) versendet. Soweit Daten außerhalb der EU/des EWR übermittelt werden, geschieht dies auf Grundlage geeigneter Garantien wie der EU-Standardvertragsklauseln."
+                },
+                {
+                    "strong": "Bot-Schutz:",
+                    "text": "Sofern aktiviert, nutzt das Formular Friendly Captcha (Friendly Captcha GmbH, Deutschland), um zu prüfen, dass Bewerbungen von echten Personen stammen. Dies funktioniert ohne Cookies und ohne Tracking."
+                }
+            ],
+            "outro": "An Behörden geben wir Daten nur weiter, wenn wir gesetzlich dazu verpflichtet sind."
+        },
+        "cookies": {
+            "title": "5. Cookies und Tracking",
+            "paragraphs": [
+                "Diese Seite verwendet zwei technisch notwendige Cookies: ein Sitzungs-Cookie, das das Formular vor Missbrauch schützt (z. B. Cross-Site-Request-Forgery) und beim Schließen des Browsers gelöscht wird, sowie ein Sprach-Cookie, das Ihre gewählte Sprache ein Jahr lang speichert. Wir verwenden keine Analyse-, Werbe- oder Tracking-Cookies.",
+                "Schriftarten und Skripte werden von unserem eigenen Server geladen, sodass keine Daten an Schriftartanbieter wie Google Fonts übermittelt werden."
+            ]
+        },
+        "retention": {
+            "title": "6. Speicherdauer",
+            "paragraphs": [
+                "Wird Ihre Bewerbung angenommen, speichern wir Ihre Daten für die Dauer der Partnerschaft und danach so lange, wie gesetzliche Aufbewahrungsfristen (z. B. nach Handels- und Steuerrecht) es verlangen.",
+                "Führt Ihre Bewerbung nicht zu einer Partnerschaft, löschen wir Ihre Daten, sobald sie nicht mehr benötigt werden, spätestens 12 Monate nach unserer Entscheidung, sofern Sie keiner längeren Speicherung zugestimmt haben. Sicherheitsdaten wie IP-basierte Einträge zur Begrenzung von Anfragen werden nach kurzer Zeit automatisch gelöscht."
+            ]
+        },
+        "rights": {
+            "title": "7. Ihre Rechte",
+            "intro": "Nach der DSGVO haben Sie das Recht auf:",
+            "items": [
+                "Auskunft über die bei uns gespeicherten personenbezogenen Daten (Art. 15)",
+                "Berichtigung unrichtiger Daten (Art. 16)",
+                "Löschung Ihrer Daten (Art. 17) oder Einschränkung der Verarbeitung (Art. 18)",
+                "Datenübertragbarkeit (Art. 20)",
+                "Widerspruch gegen die Verarbeitung auf Grundlage unserer berechtigten Interessen (Art. 21)",
+                "jederzeitigen Widerruf Ihrer Einwilligung (Art. 7 Abs. 3)"
+            ],
+            "outro": "Außerdem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, insbesondere in dem EU-Mitgliedstaat Ihres Wohnorts oder Arbeitsplatzes."
+        },
+        "contact": {
+            "title": "8. Kontakt",
+            "text": "Bei Fragen zu dieser Datenschutzerklärung oder zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter :email. Wir antworten so schnell wie möglich.",
+            "update": "Wir können diese Erklärung anpassen, wenn sich unsere Leistungen oder rechtliche Vorgaben ändern. Die aktuelle Fassung finden Sie stets auf dieser Seite."
+        },
+        "cta": {
+            "title": "Bereit für Ihre Bewerbung?",
+            "text": "Werden Sie in wenigen Minuten B2B-Partner von Khan Travel Services.",
+            "button": "Partner werden"
+        }
+    },
+    "email": {
+        "program": "B2B-Partnerprogramm",
+        "copyright": "© :year Khan Travel Services. Alle Rechte vorbehalten.",
+        "confirmation": {
+            "subject": "Wir haben Ihre B2B-Partnerbewerbung bei Khan Travel Services erhalten",
+            "preheader": "Ihre Bewerbung für :company wird geprüft. Wir melden uns zu den nächsten Schritten.",
+            "eyebrow": "Partnerbewerbung",
+            "heading": "Bewerbung erhalten",
+            "hello": "Hallo :name,",
+            "thanks": "vielen Dank für Ihr Interesse an einer B2B-Partnerschaft mit Khan Travel Services.",
+            "received": "Wir haben Ihre Partnerbewerbung für :company erfolgreich erhalten.",
+            "review": "Unser Team prüft Ihre Angaben und meldet sich bei Ihnen zu den nächsten Schritten.",
+            "status_label": "Status der Bewerbung",
+            "status": "In Prüfung",
+            "company": "Unternehmen",
+            "phone": "Telefon",
+            "submitted": "Eingegangen",
+            "next_title": "So geht es weiter",
+            "next": [
+                "Unser Team prüft Ihre Bewerbung.",
+                "Wir melden uns bei Ihnen zu den nächsten Schritten.",
+                "Nach der Freigabe kann Ihr Team die Khan Travel Services B2B-Plattform nutzen."
+            ],
+            "signoff": "Vielen Dank,",
+            "team": "Ihr Khan Travel Services Team",
+            "footer_note": "Sie erhalten diese E-Mail, weil mit dieser Adresse eine B2B-Partnerschaft bei Khan Travel Services beantragt wurde. Falls Sie das nicht waren, antworten Sie einfach auf diese E-Mail."
+        }
+    },
+    "formats": {
+        "datetime": "d.m.Y, H:i"
+    }
+}

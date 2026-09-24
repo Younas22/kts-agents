@@ -16,8 +16,8 @@ if (str_ends_with(strtolower($requestPath), '.php')) {
 }
 
 $meta = [
-    'title'       => 'Privacy Policy | Khan Travel',
-    'description' => 'How Khan Travel handles personal data submitted through the B2B partner application form.',
+    'title'       => t('meta.privacy_title'),
+    'description' => t('meta.privacy_description'),
     'canonical'   => config('app.url') !== '' ? absolute_url('privacy-policy') : '',
 ];
 

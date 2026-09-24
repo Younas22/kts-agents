@@ -155,7 +155,7 @@
   }
   /* Airline logo slider: 4 identical copies, move by one copy (25%) for a seamless loop */
   .airline-track {
-    animation: airline-scroll 40s linear infinite;
+    animation: airline-scroll 22s linear infinite;
   }
   @keyframes airline-scroll {
     to {

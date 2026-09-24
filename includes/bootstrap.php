@@ -11,6 +11,7 @@ define('STORAGE_PATH', APP_ROOT . '/storage');
 $GLOBALS['app_config'] = require APP_ROOT . '/config/config.php';
 
 require_once __DIR__ . '/helpers.php';
+require_once __DIR__ . '/i18n.php';
 require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/csrf.php';
 require_once __DIR__ . '/validation.php';
@@ -34,15 +35,17 @@ set_exception_handler(static function (Throwable $e): void {
         http_response_code(500);
     }
 
+    try {
+        $message = (string) t('messages.server_error');
+    } catch (Throwable) {
+        $message = 'Something went wrong. Please try again later.';
+    }
+
     if (is_ajax_request()) {
-        json_response(500, [
-            'ok'      => false,
-            'message' => MSG_SERVER_ERROR,
-        ]);
+        json_response(500, ['ok' => false, 'message' => $message]);
     }
 
     echo '<!doctype html><meta charset="utf-8"><title>Something went wrong</title>'
-        . '<p style="font-family:sans-serif;padding:40px;text-align:center">'
-        . e(MSG_SERVER_ERROR) . '</p>';
+        . '<p style="font-family:sans-serif;padding:40px;text-align:center">' . e($message) . '</p>';
     exit;
 });

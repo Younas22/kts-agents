@@ -1,6 +1,6 @@
 <?php
 /**
- * /become-a-partner – Khan Travel B2B partner landing page and application endpoint.
+ * /become-a-partner – Khan Travel Services B2B partner landing page and application endpoint.
  *
  * GET  → landing page
  * POST → process application (JSON for fetch requests, redirect/re-render without JS)
@@ -44,12 +44,12 @@ if ($method === 'POST') {
     // No-JS fallback: Post/Redirect/Get on success, re-render with errors otherwise.
     if ($result['payload']['ok']) {
         $_SESSION['partner_application_submitted'] = true;
-        redirect(url('become-a-partner') . '#apply', 303);
+        redirect(url('become-a-partner') . '?lang=' . current_language() . '#apply', 303);
     }
 
     http_response_code($result['status']);
     $errors = $result['payload']['errors'] ?? [];
-    $alert  = $result['payload']['message'] ?? MSG_SERVER_ERROR;
+    $alert  = $result['payload']['message'] ?? t('messages.server_error');
     $old    = array_map(
         static fn ($v) => is_string($v) ? $v : '',
         array_intersect_key($_POST, array_flip([
@@ -63,8 +63,8 @@ if ($method === 'POST') {
 }
 
 $meta = [
-    'title'       => 'Become a B2B Partner | Khan Travel',
-    'description' => 'Apply to become a Khan Travel B2B partner. Give your travel agency a professional booking platform for flights, hotels, tours and Umrah.',
+    'title'       => t('meta.partner_title'),
+    'description' => t('meta.partner_description'),
     'canonical'   => config('app.url') !== '' ? absolute_url('become-a-partner') : '',
 ];
 

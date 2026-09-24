@@ -25,16 +25,17 @@ ErrorDocument 403 /404.php
     RewriteEngine On
 
     # Internal folders are not public → branded 404.
-    RewriteRule ^(config|includes|emails|views|storage|database|src|node_modules)(/|$) 404.php [L]
+    RewriteRule ^(config|includes|emails|views|storage|database|src|lang|node_modules)(/|$) 404.php [L]
 
     # Clean URL for the landing page (the file partner.php stays hidden).
     RewriteRule ^become-a-partner/?$ partner.php [L,QSA]
     RewriteRule ^privacy-policy/?$ privacy.php [L,QSA]
+    RewriteRule ^language-settings/?$ language-settings.php [L,QSA]
 
     # Direct requests for PHP files other than the entry points → 404.
     # (partner.php, privacy.php and index.php redirect themselves to clean URLs.)
     RewriteCond %{ENV:REDIRECT_STATUS} ^$
-    RewriteRule ^(?!(partner|privacy|index|404)\.php$).+\.php$ 404.php [L]
+    RewriteRule ^(?!(partner|privacy|language-settings|index|404)\.php$).+\.php$ 404.php [L]
 
     # Anything that is not a real file or folder → branded 404 page.
     RewriteCond %{REQUEST_FILENAME} !-f

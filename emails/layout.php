@@ -16,7 +16,7 @@
 $font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="<?= e(current_language()) ?>">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,12 +68,12 @@ $font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue'
                 <tr>
 <?php if ($logo_url !== ''): ?>
                   <td valign="middle" width="56" style="width:56px; padding-right:12px;">
-                    <img src="<?= e($logo_url) ?>" width="56" height="56" alt="Khan Travel" style="width:56px; height:56px; color:#0077BE; font-family:<?= $font ?>; font-size:12px; font-weight:bold;">
+                    <img src="<?= e($logo_url) ?>" width="56" height="56" alt="Khan Travel Services" style="width:56px; height:56px; color:#0077BE; font-family:<?= $font ?>; font-size:12px; font-weight:bold;">
                   </td>
 <?php endif; ?>
                   <td valign="middle" style="font-family:<?= $font ?>;">
-                    <span style="display:block; font-size:18px; line-height:22px; font-weight:bold; color:#0E1C2B;">Khan Travel</span>
-                    <span style="display:block; font-size:12px; line-height:16px; color:#5B6B7F;">B2B Partner Program</span>
+                    <span style="display:block; font-size:18px; line-height:22px; font-weight:bold; color:#0E1C2B;">Khan Travel Services</span>
+                    <span style="display:block; font-size:12px; line-height:16px; color:#5B6B7F;"><?= te('email.program') ?></span>
                   </td>
                 </tr>
               </table>
@@ -101,12 +101,12 @@ $font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue'
     <!-- Footer -->
     <tr>
       <td class="px" style="padding:24px 40px 28px 40px; background-color:#F6F8FB; border-top:1px solid #E3E8EF; border-radius:0 0 8px 8px; font-family:<?= $font ?>; font-size:12px; line-height:19px; color:#5B6B7F;">
-        <p style="margin:0 0 6px 0; font-weight:bold; color:#334155;">Khan Travel &middot; B2B Partner Program</p>
+        <p style="margin:0 0 6px 0; font-weight:bold; color:#334155;">Khan Travel Services &middot; <?= te('email.program') ?></p>
 <?php if ($main_site !== ''): ?>
         <p style="margin:0 0 6px 0;"><a href="<?= e($main_site) ?>" style="color:#0077BE; text-decoration:none;"><?= e(preg_replace('#^https?://#', '', $main_site)) ?></a></p>
 <?php endif; ?>
         <p style="margin:0;"><?= e($footer_note) ?></p>
-        <p style="margin:12px 0 0 0; color:#8593A3;">&copy; <?= e($year) ?> Khan Travel. All rights reserved.</p>
+        <p style="margin:12px 0 0 0; color:#8593A3;"><?= te('email.copyright', ['year' => $year]) ?></p>
       </td>
     </tr>
   </table>
