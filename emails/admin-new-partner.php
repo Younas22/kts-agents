@@ -64,7 +64,7 @@ ob_start();
   </tr>
 </table>
 
-<p style="margin:16px 0 0 0; font-size:13px; line-height:20px; color:#5B6B7F;">
+<!-- <p style="margin:16px 0 0 0; font-size:13px; line-height:20px; color:#5B6B7F;">
   Saved in the users table as user #<?= (int) $a['id'] ?> with agent code <strong style="color:#334155;"><?= e($a['agent_code']) ?></strong>
   (approval status <em>pending</em>, account status <em>inactive</em>).
 </p>
@@ -81,7 +81,7 @@ ob_start();
 <p style="margin:24px 0 0 0; padding:14px 16px; background-color:#EEF6FC; border-left:3px solid #0077BE; font-size:14px; line-height:22px; color:#084A75;">
   <strong>Review Application:</strong> open the admin panel and go to <strong>Agents &rarr; Pending</strong> to approve or decline this application.
 </p>
-<?php endif; ?>
+<?php endif; ?> -->
 
 <p style="margin:24px 0 0 0; font-size:13px; line-height:20px; color:#5B6B7F;">Reply to this email to contact the applicant directly.</p>
 <?php
