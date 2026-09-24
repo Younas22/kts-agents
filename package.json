@@ -1,0 +1,20 @@
+{
+  "name": "kts-agents",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Khan Travel B2B partner registration page (build tooling only – nothing here runs in production)",
+  "scripts": {
+    "build": "tailwindcss -i src/tailwind.css -o assets/css/app.css --minify",
+    "watch": "tailwindcss -i src/tailwind.css -o assets/css/app.css --watch",
+    "fonts": "node -e \"const f=require('fs'),d='node_modules/@fontsource-variable/inter/files/';f.copyFileSync(d+'inter-latin-wght-normal.woff2','assets/fonts/inter-latin-var.woff2');f.copyFileSync(d+'inter-latin-ext-wght-normal.woff2','assets/fonts/inter-latin-ext-var.woff2')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Younas22/kts-agents.git"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "tailwindcss": "^3.4.19"
+  }
+}

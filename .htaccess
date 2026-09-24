@@ -1,0 +1,53 @@
+# ------------------------------------------------------------------
+# Khan Travel – B2B Partner Registration (Apache 2.4, mod_rewrite)
+# Works at the domain root and inside a sub-folder (rules are relative).
+# ------------------------------------------------------------------
+
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+
+# Custom 404 for anything Apache itself rejects.
+# Path is from the DOCUMENT ROOT: if the app lives in a sub-folder, prefix it
+# (e.g. "ErrorDocument 404 /kts-agents/404.php").
+ErrorDocument 404 /404.php
+# Denied files (.env etc.) also get the 404 page, so their existence is not revealed.
+ErrorDocument 403 /404.php
+
+# Never serve dotfiles (.env, .git, .htaccess) or build/docs files.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+<FilesMatch "(?i)\.(md|sql|log|lock|dist|example|ini|sh)$|^(package(-lock)?\.json|tailwind\.config\.js|composer\.(json|lock))$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Internal folders are not public → branded 404.
+    RewriteRule ^(config|includes|emails|views|storage|database|src|node_modules)(/|$) 404.php [L]
+
+    # Clean URL for the landing page (the file partner.php stays hidden).
+    RewriteRule ^become-a-partner/?$ partner.php [L,QSA]
+
+    # Direct requests for PHP files other than the entry points → 404.
+    # (partner.php and index.php redirect themselves to clean URLs.)
+    RewriteCond %{ENV:REDIRECT_STATUS} ^$
+    RewriteRule ^(?!(partner|index|404)\.php$).+\.php$ 404.php [L]
+
+    # Anything that is not a real file or folder → branded 404 page.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ 404.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|png|jpe?g|webp|svg|woff2)$">
+        # Asset URLs are versioned (?v=mtime) so long caching is safe.
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>

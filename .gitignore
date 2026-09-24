@@ -1,0 +1,7 @@
+.env
+node_modules/
+storage/logs/*
+storage/cache/ratelimit/*
+storage/mail-preview/*
+!storage/**/.gitkeep
+!storage/.htaccess

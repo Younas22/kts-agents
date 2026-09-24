@@ -1,0 +1,164 @@
+/* Source for assets/css/app.css — rebuild with `npm run build`. */
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../fonts/inter-latin-var.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../fonts/inter-latin-ext-var.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF,
+    U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+  /* Utility display classes (flex, grid…) must never override the hidden attribute. */
+  [hidden] {
+    display: none !important;
+  }
+  ::selection {
+    @apply bg-brand-100 text-brand-900;
+  }
+  :focus-visible {
+    outline: 2px solid theme('colors.brand.500');
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg px-5 text-[15px] font-semibold tracking-[-0.005em] transition-[background-color,border-color,box-shadow,color] duration-150 focus-visible:outline-none focus-visible:shadow-focus disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white shadow-[0_1px_2px_rgba(0,90,145,0.25),inset_0_1px_0_rgba(255,255,255,0.12)] hover:bg-brand-600 active:bg-brand-700 disabled:bg-brand-400;
+  }
+  .btn-secondary {
+    @apply btn border border-line bg-white text-ink hover:border-brand-200 hover:bg-brand-50 hover:text-brand-700;
+  }
+  .btn-light {
+    @apply btn bg-white text-brand-700 hover:bg-brand-50;
+  }
+
+  /* Section typography */
+  .eyebrow {
+    @apply text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-600;
+  }
+  .section-title {
+    @apply text-[1.75rem] font-bold leading-tight tracking-[-0.02em] text-ink sm:text-[2.125rem];
+  }
+  .section-lead {
+    @apply text-base leading-relaxed text-ink-muted sm:text-[17px];
+  }
+
+  /* Form controls */
+  .field-label {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+  .field-required {
+    @apply ml-0.5 text-brand-600;
+  }
+  .field-control {
+    @apply block h-12 w-full rounded-lg border border-slate-300 bg-white px-3.5 text-[15px] text-ink shadow-[0_1px_1px_rgba(14,28,43,0.03)] transition-[border-color,box-shadow] duration-150 placeholder:text-slate-400 hover:border-slate-400 focus:border-brand-500 focus:shadow-focus focus:outline-none;
+  }
+  .field-control[aria-invalid='true'] {
+    @apply border-red-600 hover:border-red-700 focus:border-red-600 focus:shadow-[0_0_0_4px_rgba(220,38,38,0.15)];
+  }
+  select.field-control {
+    @apply cursor-pointer appearance-none pr-11;
+  }
+  .field-help {
+    @apply mt-1.5 text-[13px] leading-snug text-ink-muted;
+  }
+  .field-error {
+    @apply mt-1.5 flex items-start gap-1.5 text-[13px] font-medium leading-snug text-red-700;
+  }
+
+  /* Accessible custom checkbox (native input, custom look) */
+  .check-input {
+    @apply mt-0.5 h-5 w-5 flex-none cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-slate-400 bg-white bg-center bg-no-repeat transition-[background-color,border-color,box-shadow] duration-150 hover:border-brand-500 focus:outline-none focus-visible:shadow-focus;
+    background-size: 14px 14px;
+  }
+  .check-input:checked {
+    @apply border-brand-500 bg-brand-500;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+  }
+  .check-input[aria-invalid='true'] {
+    @apply border-red-600;
+  }
+
+  /* Decorative dotted backdrop */
+  .bg-dots {
+    background-image: radial-gradient(theme('colors.slate.300') 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .fade-up {
+    animation: fade-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .fade-up-delay {
+    animation-delay: 0.12s;
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .spin {
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
