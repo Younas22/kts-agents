@@ -153,6 +153,23 @@
       transform: none;
     }
   }
+  /* Airline logo slider: 4 identical copies, move by one copy (25%) for a seamless loop */
+  .airline-track {
+    animation: airline-scroll 40s linear infinite;
+  }
+  @keyframes airline-scroll {
+    to {
+      transform: translateX(-25%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .airline-track {
+      animation: none !important;
+    }
+    .airline-marquee {
+      overflow-x: auto;
+    }
+  }
   .spin {
     animation: spin 0.8s linear infinite;
   }

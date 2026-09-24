@@ -48,8 +48,8 @@ require APP_ROOT . '/views/partials/head.php';
 
         <div class="relative mx-auto grid grid-cols-1 max-w-page items-center gap-14 px-4 pb-20 pt-10 sm:px-6 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] lg:gap-12 lg:px-8 lg:pb-28 lg:pt-20">
             <div class="fade-up">
-                <p class="inline-flex max-w-full items-center gap-2 rounded-full border border-brand-100 bg-white/80 py-1 pl-2 pr-3 text-[13px] font-medium text-brand-700 shadow-[0_1px_2px_rgba(14,28,43,0.04)]">
-                    <span class="grid h-5 w-5 flex-none place-items-center rounded-full bg-brand-500 text-white"><?= icon('plane', 'h-3 w-3') ?></span>
+                <p class="inline-flex max-w-full items-center gap-2 rounded-full border border-brand-100 bg-white/80 py-1 pl-1 pr-3 text-[13px] font-medium text-brand-700 shadow-[0_1px_2px_rgba(14,28,43,0.04)]">
+                    <span class="inline-flex flex-none items-center gap-1 rounded-full bg-brand-500 py-0.5 pl-1.5 pr-2.5 text-xs font-bold tracking-wide text-white"><?= icon('check', 'h-3.5 w-3.5') ?>IATA Certified</span>
                     <span class="truncate">Khan Travel B2B Partner Program</span>
                 </p>
 
@@ -72,7 +72,17 @@ require APP_ROOT . '/views/partials/head.php';
                     <a href="#how-it-works" class="btn-secondary h-12 px-6 text-base">How It Works</a>
                 </div>
 
-                <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-sm font-medium text-ink-soft">
+                <div class="mt-8 inline-flex max-w-full items-center gap-4 rounded-2xl border border-line bg-white py-3 pl-3 pr-5 shadow-card">
+                    <img src="<?= e(asset('images/iata-logo.png')) ?>" alt="IATA – International Air Transport Association" width="160" height="160" class="h-14 w-14 flex-none sm:h-16 sm:w-16">
+                    <div class="min-w-0 leading-snug">
+                        <p class="flex items-center gap-1.5 text-base font-bold text-ink sm:text-[17px]">
+                            IATA Certified <?= icon('shield-check', 'h-[18px] w-[18px] flex-none text-brand-500') ?>
+                        </p>
+                        <p class="mt-0.5 text-[13px] text-ink-muted sm:text-sm">Book with an internationally recognised travel company</p>
+                    </div>
+                </div>
+
+                <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2.5 text-sm font-medium text-ink-soft">
                     <li class="flex items-center gap-2"><?= icon('clock', 'h-[18px] w-[18px] text-brand-500') ?>Takes about 2 minutes</li>
                     <li class="flex items-center gap-2"><?= icon('users', 'h-[18px] w-[18px] text-brand-500') ?>Reviewed by our team</li>
                     <li class="flex items-center gap-2"><?= icon('lock', 'h-[18px] w-[18px] text-brand-500') ?>Secure submission</li>
@@ -182,6 +192,36 @@ require APP_ROOT . '/views/partials/head.php';
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ============================== AIRLINES ============================== -->
+    <?php
+    // [file, name, display height class] – heights balance square marks against wide wordmarks.
+    $airlines = [
+        ['emirates.png', 'Emirates', 'h-12 sm:h-14'],
+        ['qatar-airways.png', 'Qatar Airways', 'h-9 sm:h-10'],
+        ['turkish-airlines.png', 'Turkish Airlines', 'h-12 sm:h-14'],
+        ['etihad-airways.png', 'Etihad Airways', 'h-9 sm:h-10'],
+        ['air-canada.png', 'Air Canada', 'h-12 sm:h-14'],
+        ['american-airlines.png', 'American Airlines', 'h-6 sm:h-7'],
+    ];
+    ?>
+    <section class="border-t border-line bg-white py-10 sm:py-12" aria-labelledby="airlines-title">
+        <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-8">
+            <p id="airlines-title" class="text-center text-sm font-semibold text-ink-muted">Book flights with leading airlines worldwide</p>
+        </div>
+
+        <div class="airline-marquee group relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
+            <ul class="airline-track flex w-max items-center group-hover:[animation-play-state:paused]">
+                <?php for ($copy = 0; $copy < 4; $copy++): // 4 copies keep the loop seamless on wide screens ?>
+                    <?php foreach ($airlines as [$file, $name, $height]): ?>
+                        <li class="flex h-16 flex-none items-center px-7 sm:px-10"<?= $copy > 0 ? ' aria-hidden="true"' : '' ?>>
+                            <img src="<?= e(asset('images/airlines/' . $file)) ?>" alt="<?= $copy > 0 ? '' : e($name) ?>" loading="lazy" decoding="async" class="<?= $height ?> w-auto max-w-none select-none" draggable="false">
+                        </li>
+                    <?php endforeach; ?>
+                <?php endfor; ?>
+            </ul>
         </div>
     </section>
 
