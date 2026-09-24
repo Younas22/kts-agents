@@ -72,13 +72,14 @@ $mainSiteUrl = rtrim((string) env('MAIN_SITE_URL', ''), '/');
 return [
     'app' => [
         'name'               => 'Khan Travel',
-        'platform'           => 'TravelBookingPanel',
+        'platform'           => 'Khan Travel',
         'env'                => env('APP_ENV', 'production'),
         'debug'              => env_bool('APP_DEBUG'),
         'url'                => $appUrl,
         'timezone'           => env('APP_TIMEZONE', 'UTC'),
         'main_site_url'      => $mainSiteUrl,
-        'privacy_policy_url' => env('PRIVACY_POLICY_URL') ?? ($mainSiteUrl !== '' ? $mainSiteUrl . '/page/privacy-policy' : ''),
+        // Empty → this app's own /privacy-policy page.
+        'privacy_policy_url' => env('PRIVACY_POLICY_URL', ''),
         'contact_email'      => env('CONTACT_EMAIL', ''),
     ],
 
@@ -107,6 +108,8 @@ return [
         'site_key'   => env('FRIENDLY_CAPTCHA_SITE_KEY', ''),
         'secret_key' => env('FRIENDLY_CAPTCHA_SECRET_KEY', ''),
         'endpoint'   => env('FRIENDLY_CAPTCHA_ENDPOINT', 'global') === 'eu' ? 'eu' : 'global',
+        // Show a "not configured" notice in the form (local only) while keys are missing.
+        'show_placeholder' => env_bool('FRIENDLY_CAPTCHA_SHOW_PLACEHOLDER'),
     ],
 
     'rate_limit' => [

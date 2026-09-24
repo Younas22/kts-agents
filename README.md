@@ -56,6 +56,7 @@ The agent wallet is **not** created here. The Laravel app creates it when an adm
 ├── index.php                 "/" → redirects to /become-a-partner
 ├── partner.php               /become-a-partner (GET page, POST application)
 ├── 404.php                   branded 404 page
+├── privacy.php               /privacy-policy (privacy notice for the form)
 ├── config/config.php         reads environment variables / .env (no secrets inside)
 ├── includes/
 │   ├── bootstrap.php         config, error handling, includes
@@ -125,7 +126,7 @@ Requirements: PHP ≥ 8.1 with `pdo_mysql`, `curl`, `mbstring`, `openssl`. A MyS
 | `APP_URL` | Public base URL, no trailing slash. Used for canonical URL and email links. |
 | `APP_TIMEZONE` | Must match the Laravel app's `app.timezone` (currently `UTC`). |
 | `MAIN_SITE_URL` | Khan Travel website ("Back to Khan Travel" buttons, footer). |
-| `PRIVACY_POLICY_URL` | Privacy Policy link. Defaults to `MAIN_SITE_URL/page/privacy-policy` (the existing page in the Laravel app). |
+| `PRIVACY_POLICY_URL` | Optional external Privacy Policy link. Empty = this app's own `/privacy-policy` page (review its content with your legal adviser and add your company address). |
 | `CONTACT_EMAIL` | Optional contact email shown beside the form. |
 | `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` | Existing `khantravel` database. |
 | `RESEND_API_KEY` | Resend API key. **Server-side only, never in JS or committed files.** |
@@ -138,6 +139,7 @@ Requirements: PHP ≥ 8.1 with `pdo_mysql`, `curl`, `mbstring`, `openssl`. A MyS
 | `MAIL_PREVIEW` | `true` writes a copy of each email to `storage/mail-preview/` (handy locally). |
 | `FRIENDLY_CAPTCHA_SITE_KEY` / `FRIENDLY_CAPTCHA_SECRET_KEY` | Friendly Captcha v2 site key and API key. |
 | `FRIENDLY_CAPTCHA_ENDPOINT` | `global` (default) or `eu`. |
+| `FRIENDLY_CAPTCHA_SHOW_PLACEHOLDER` | `true` shows a "CAPTCHA not configured" notice in the form (local only). Default `false`. |
 | `RATE_LIMIT_MAX_ATTEMPTS` / `RATE_LIMIT_WINDOW` | Submission attempts per IP per window (default 8 per 900 s). |
 
 ### Emails (Resend)

@@ -12,7 +12,7 @@
 require_once APP_ROOT . '/views/partials/form-fields.php';
 
 $sectionBase  = '';
-$privacyUrl   = (string) config('app.privacy_policy_url');
+$privacyUrl   = privacy_policy_url();
 $mainSite     = (string) config('app.main_site_url');
 $contactEmail = (string) config('app.contact_email');
 $captchaOn    = captcha_enabled();
@@ -50,7 +50,7 @@ require APP_ROOT . '/views/partials/head.php';
             <div class="fade-up">
                 <p class="inline-flex max-w-full items-center gap-2 rounded-full border border-brand-100 bg-white/80 py-1 pl-2 pr-3 text-[13px] font-medium text-brand-700 shadow-[0_1px_2px_rgba(14,28,43,0.04)]">
                     <span class="grid h-5 w-5 flex-none place-items-center rounded-full bg-brand-500 text-white"><?= icon('plane', 'h-3 w-3') ?></span>
-                    <span class="truncate">Khan Travel B2B &middot; Powered by TravelBookingPanel</span>
+                    <span class="truncate">Khan Travel B2B Partner Program</span>
                 </p>
 
                 <h1 id="hero-title" class="mt-6 text-balance text-[2.125rem] font-bold leading-[1.1] tracking-[-0.03em] text-ink sm:text-[2.75rem] lg:text-[3.25rem]">
@@ -393,11 +393,12 @@ require APP_ROOT . '/views/partials/head.php';
                             </div>
                         </fieldset>
 
-                        <div class="mt-7" data-field="captcha">
+                        <?php $showCaptchaPlaceholder = !$captchaOn && !is_production() && config('captcha.show_placeholder'); ?>
+                        <div class="<?= $captchaOn || $showCaptchaPlaceholder ? 'mt-7' : '' ?>" data-field="captcha">
                             <?php if ($captchaOn): ?>
                                 <div class="frc-captcha" data-sitekey="<?= e(config('captcha.site_key')) ?>" data-start="focus" data-lang="en"
                                      data-api-endpoint="<?= e(config('captcha.endpoint')) ?>"></div>
-                            <?php elseif (!is_production()): ?>
+                            <?php elseif ($showCaptchaPlaceholder): ?>
                                 <div class="rounded-lg border border-dashed border-amber-300 bg-amber-50 p-4 text-[13px] leading-relaxed text-amber-900">
                                     <p class="font-semibold">CAPTCHA placeholder (development only)</p>
                                     <p class="mt-1">Friendly Captcha is not configured. Set <code class="rounded bg-amber-100 px-1">FRIENDLY_CAPTCHA_SITE_KEY</code> and <code class="rounded bg-amber-100 px-1">FRIENDLY_CAPTCHA_SECRET_KEY</code> in <code class="rounded bg-amber-100 px-1">.env</code> to enable bot protection.</p>

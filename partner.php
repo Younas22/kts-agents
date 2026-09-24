@@ -64,7 +64,7 @@ if ($method === 'POST') {
 
 $meta = [
     'title'       => 'Become a B2B Partner | Khan Travel',
-    'description' => 'Apply to become a Khan Travel B2B partner. Give your travel agency a professional booking platform for flights, hotels, tours and Umrah, powered by TravelBookingPanel.',
+    'description' => 'Apply to become a Khan Travel B2B partner. Give your travel agency a professional booking platform for flights, hotels, tours and Umrah.',
     'canonical'   => config('app.url') !== '' ? absolute_url('become-a-partner') : '',
 ];
 

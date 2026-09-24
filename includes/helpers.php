@@ -69,6 +69,13 @@ function absolute_url(string $path = ''): string
     return $root . '/' . ltrim($path, '/');
 }
 
+/** Privacy Policy link: PRIVACY_POLICY_URL if set, otherwise this app's /privacy-policy page. */
+function privacy_policy_url(): string
+{
+    $configured = (string) config('app.privacy_policy_url');
+    return $configured !== '' ? $configured : url('privacy-policy');
+}
+
 /** Versioned asset URL for cache busting. */
 function asset(string $path): string
 {
