@@ -4,7 +4,7 @@ $a = $application;
 ?>
 New Partner Application
 
-A travel agency has applied to become a Khan Travel Services B2B partner.
+A travel agency has applied to become a Khan Travel Services e.K. B2B partner.
 
 Company: <?= $a['company_name'] ?>
 
@@ -33,4 +33,4 @@ Review Application: open the admin panel → Agents → Pending.
 <?php endif; ?>
 
 --
-Khan Travel Services · B2B Partner Program
+Khan Travel Services e.K. · B2B Partner Program

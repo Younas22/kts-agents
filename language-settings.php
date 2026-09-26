@@ -146,15 +146,15 @@ foreach ($config['languages'] as $code => $info) {
     ];
 }
 
-$meta = ['title' => 'Language Settings | Khan Travel Services', 'description' => 'Language settings', 'noindex' => true];
+$meta = ['title' => 'Language Settings | Khan Travel Services e.K.', 'description' => 'Language settings', 'noindex' => true];
 require APP_ROOT . '/views/partials/head.php';
 ?>
 <body class="min-h-screen bg-surface">
 <header class="border-b border-line bg-white">
     <div class="mx-auto flex h-16 max-w-4xl items-center justify-between gap-4 px-4 sm:px-6">
         <a href="<?= e(url('become-a-partner')) ?>" class="flex items-center gap-3">
-            <img src="<?= e(asset('images/khan-travel-logo.png')) ?>" alt="Khan Travel Services" width="128" height="128" class="h-10 w-10">
-            <span class="leading-tight"><span class="block font-bold text-ink">Khan Travel Services</span><span class="block text-xs text-ink-muted">Language settings</span></span>
+            <img src="<?= e(asset('images/khan-travel-logo.png')) ?>" alt="Khan Travel Services e.K." width="128" height="128" class="h-10 w-10">
+            <span class="leading-tight"><span class="block font-bold text-ink">Khan Travel Services e.K.</span><span class="block text-xs text-ink-muted">Language settings</span></span>
         </a>
         <?php if ($isAdmin): ?>
             <form method="post" action="<?= e($selfUrl) ?>">

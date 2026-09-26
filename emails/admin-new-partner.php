@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin notification: "New Khan Travel Services B2B Partner Application".
+ * Admin notification: "New Khan Travel Services e.K. B2B Partner Application".
  *
  * @var array  $application
  * @var string $review_url  empty when ADMIN_REVIEW_URL is not configured
@@ -30,7 +30,7 @@ $rows = [
 
 ob_start();
 ?>
-<p style="margin:0 0 24px 0;">A travel agency has applied to become a Khan Travel Services B2B partner. The application is waiting for your review.</p>
+<p style="margin:0 0 24px 0;">A travel agency has applied to become a Khan Travel Services e.K. B2B partner. The application is waiting for your review.</p>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E3E8EF; border-radius:6px;">
 <?php $i = 0; foreach ($rows as $label => $value): $border = $i++ === 0 ? '' : 'border-top:1px solid #EEF1F5;'; ?>
@@ -88,7 +88,7 @@ ob_start();
 <?php
 $content = (string) ob_get_clean();
 
-$subject     = 'New Khan Travel Services B2B Partner Application';
+$subject     = 'New Khan Travel Services e.K. B2B Partner Application';
 $preheader   = $a['company_name'] . ' applied to become a B2B partner – pending review.';
 $eyebrow     = 'Admin notification';
 $heading     = 'New Partner Application';

@@ -1,6 +1,6 @@
 <?php
 /**
- * /become-a-partner – Khan Travel Services B2B partner landing page and application endpoint.
+ * /become-a-partner – Khan Travel Services e.K. B2B partner landing page and application endpoint.
  *
  * GET  → landing page
  * POST → process application (JSON for fetch requests, redirect/re-render without JS)

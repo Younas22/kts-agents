@@ -68,11 +68,11 @@ $font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue'
                 <tr>
 <?php if ($logo_url !== ''): ?>
                   <td valign="middle" width="56" style="width:56px; padding-right:12px;">
-                    <img src="<?= e($logo_url) ?>" width="56" height="56" alt="Khan Travel Services" style="width:56px; height:56px; color:#0077BE; font-family:<?= $font ?>; font-size:12px; font-weight:bold;">
+                    <img src="<?= e($logo_url) ?>" width="56" height="56" alt="Khan Travel Services e.K." style="width:56px; height:56px; color:#0077BE; font-family:<?= $font ?>; font-size:12px; font-weight:bold;">
                   </td>
 <?php endif; ?>
                   <td valign="middle" style="font-family:<?= $font ?>;">
-                    <span style="display:block; font-size:18px; line-height:22px; font-weight:bold; color:#0E1C2B;">Khan Travel Services</span>
+                    <span style="display:block; font-size:18px; line-height:22px; font-weight:bold; color:#0E1C2B;">Khan Travel Services e.K.</span>
                     <span style="display:block; font-size:12px; line-height:16px; color:#5B6B7F;"><?= te('email.program') ?></span>
                   </td>
                 </tr>
@@ -101,7 +101,7 @@ $font = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue'
     <!-- Footer -->
     <tr>
       <td class="px" style="padding:24px 40px 28px 40px; background-color:#F6F8FB; border-top:1px solid #E3E8EF; border-radius:0 0 8px 8px; font-family:<?= $font ?>; font-size:12px; line-height:19px; color:#5B6B7F;">
-        <p style="margin:0 0 6px 0; font-weight:bold; color:#334155;">Khan Travel Services &middot; <?= te('email.program') ?></p>
+        <p style="margin:0 0 6px 0; font-weight:bold; color:#334155;">Khan Travel Services e.K. &middot; <?= te('email.program') ?></p>
 <?php if ($main_site !== ''): ?>
         <p style="margin:0 0 6px 0;"><a href="<?= e($main_site) ?>" style="color:#0077BE; text-decoration:none;"><?= e(preg_replace('#^https?://#', '', $main_site)) ?></a></p>
 <?php endif; ?>

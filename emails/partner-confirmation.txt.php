@@ -23,4 +23,4 @@ $a = $application;
 
 
 --
-Khan Travel Services · <?= t('email.program') ?>
+Khan Travel Services e.K. · <?= t('email.program') ?>

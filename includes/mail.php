@@ -173,7 +173,7 @@ function send_partner_application_emails(array $application): void
 
         send_mail([
             'to'              => $adminRecipients,
-            'subject'         => 'New Khan Travel Services B2B Partner Application',
+            'subject'         => 'New Khan Travel Services e.K. B2B Partner Application',
             'html'            => $html,
             'text'            => $text,
             'reply_to'        => $application['email'],

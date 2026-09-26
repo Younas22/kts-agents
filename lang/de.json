@@ -1,9 +1,9 @@
 {
     "site": {
-        "brand": "Khan Travel Services",
+        "brand": "Khan Travel Services e.K.",
         "program": "B2B-Partnerprogramm",
         "skip": "Zum Inhalt springen",
-        "logo_alt": "Khan Travel Services"
+        "logo_alt": "Khan Travel Services e.K."
     },
     "nav": {
         "primary": "Hauptnavigation",
@@ -18,24 +18,25 @@
     "footer": {
         "label": "Fußzeile",
         "privacy": "Datenschutz",
-        "website": "Khan Travel Services Website",
-        "copyright": "© :year Khan Travel Services. Alle Rechte vorbehalten."
+        "website": "Khan Travel Services e.K. Website",
+        "copyright": "© :year Khan Travel Services e.K. Alle Rechte vorbehalten.",
+        "imprint": "Impressum"
     },
     "meta": {
-        "partner_title": "B2B-Partner werden | Khan Travel Services",
-        "partner_description": "Werden Sie B2B-Partner von Khan Travel Services. Nutzen Sie für Ihr Reisebüro eine professionelle Buchungsplattform für Flüge, Hotels, Touren und Umrah.",
-        "notfound_title": "Seite nicht gefunden | Khan Travel Services",
+        "partner_title": "B2B-Partner werden | Khan Travel Services e.K.",
+        "partner_description": "Werden Sie B2B-Partner von Khan Travel Services e.K. Nutzen Sie für Ihr Reisebüro eine professionelle Buchungsplattform für Flüge, Hotels, Touren und Umrah.",
+        "notfound_title": "Seite nicht gefunden | Khan Travel Services e.K.",
         "notfound_description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
-        "privacy_title": "Datenschutzerklärung | Khan Travel Services",
-        "privacy_description": "Wie Khan Travel Services personenbezogene Daten aus dem B2B-Partnerformular verarbeitet."
+        "privacy_title": "Datenschutzerklärung | Khan Travel Services e.K.",
+        "privacy_description": "Wie Khan Travel Services e.K. personenbezogene Daten aus dem B2B-Partnerformular verarbeitet."
     },
     "hero": {
         "badge_iata": "IATA-zertifiziert",
-        "badge_program": "Khan Travel Services B2B-Partnerprogramm",
-        "title_start": "Werden Sie Khan Travel Services",
+        "badge_program": "Khan Travel Services e.K. B2B-Partnerprogramm",
+        "title_start": "Werden Sie Khan Travel Services e.K.",
         "title_highlight": "B2B-Partner",
         "lead": "Bauen Sie Ihr Reisegeschäft aus – mit einer leistungsstarken B2B-Buchungsplattform für moderne Reisebüros und Reiseagenten.",
-        "text": "Senden Sie uns Ihre Angaben, um sich für eine B2B-Partnerschaft mit Khan Travel Services zu bewerben. Unser Team prüft Ihre Bewerbung und meldet sich bei Ihnen zu den nächsten Schritten.",
+        "text": "Senden Sie uns Ihre Angaben, um sich für eine B2B-Partnerschaft mit Khan Travel Services e.K. zu bewerben. Unser Team prüft Ihre Bewerbung und meldet sich bei Ihnen zu den nächsten Schritten.",
         "cta_primary": "Partner werden",
         "cta_secondary": "So funktioniert's",
         "iata_title": "IATA-zertifiziert",
@@ -53,7 +54,7 @@
     "benefits": {
         "eyebrow": "Partnervorteile",
         "title": "Alles, was Sie für Ihr Reisegeschäft brauchen",
-        "lead": "Eine Plattform zum Buchen, Verwalten und Ausbauen Ihres Reiseverkaufs – mit dem Khan Travel Services Team an Ihrer Seite.",
+        "lead": "Eine Plattform zum Buchen, Verwalten und Ausbauen Ihres Reiseverkaufs – mit dem Khan Travel Services e.K. Team an Ihrer Seite.",
         "items": [
             {
                 "title": "B2B-Buchungsplattform",
@@ -97,13 +98,13 @@
             },
             {
                 "title": "B2B-Partnerschaft starten",
-                "text": "Nach der Freigabe kann Ihr Team die Khan Travel Services B2B-Plattform nutzen."
+                "text": "Nach der Freigabe kann Ihr Team die Khan Travel Services e.K. B2B-Plattform nutzen."
             }
         ]
     },
     "apply": {
         "eyebrow": "Partnerbewerbung",
-        "title": "Werden Sie Khan Travel Services Partner",
+        "title": "Werden Sie Khan Travel Services e.K. Partner",
         "lead": "Füllen Sie das folgende Formular aus – unser Team prüft Ihre Bewerbung.",
         "points": [
             {
@@ -172,17 +173,17 @@
     },
     "success": {
         "title": "Bewerbung erfolgreich gesendet",
-        "text": "Vielen Dank für Ihr Interesse an einer Partnerschaft mit Khan Travel Services. Wir haben Ihre Bewerbung erhalten, und unser Team meldet sich bei Ihnen zu den nächsten Schritten.",
+        "text": "Vielen Dank für Ihr Interesse an einer Partnerschaft mit Khan Travel Services e.K. Wir haben Ihre Bewerbung erhalten, und unser Team meldet sich bei Ihnen zu den nächsten Schritten.",
         "next_title": "So geht es weiter",
         "next": [
             "Prüfen Sie Ihr Postfach auf die Bestätigungs-E-Mail.",
             "Unser Team prüft Ihre Bewerbung.",
             "Wir melden uns bei Ihnen zu den nächsten Schritten."
         ],
-        "back": "Zurück zu Khan Travel Services"
+        "back": "Zurück zu Khan Travel Services e.K."
     },
     "cta": {
-        "title": "Bereit, mit Khan Travel Services zu wachsen?",
+        "title": "Bereit, mit Khan Travel Services e.K. zu wachsen?",
         "text": "Werden Sie Teil unseres B2B-Partnernetzwerks und nutzen Sie eine professionelle Plattform für Ihre täglichen Buchungen.",
         "button": "Partner werden",
         "points": [
@@ -192,7 +193,7 @@
             },
             {
                 "title": "Persönlich geprüft",
-                "text": "Jede Bewerbung wird vom Khan Travel Services Team persönlich geprüft."
+                "text": "Jede Bewerbung wird vom Khan Travel Services e.K. Team persönlich geprüft."
             },
             {
                 "title": "Partner-Support",
@@ -233,13 +234,13 @@
         "sr_prefix": "Fehler 404:",
         "title": "Seite nicht gefunden",
         "text": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
-        "back": "Zurück zu Khan Travel Services",
+        "back": "Zurück zu Khan Travel Services e.K.",
         "cta": "Partner werden"
     },
     "privacy": {
         "eyebrow": "Rechtliches",
         "title": "Datenschutzerklärung",
-        "intro": "Diese Erklärung beschreibt, wie Khan Travel Services mit den personenbezogenen Daten umgeht, die Sie uns bei Ihrer Bewerbung als B2B-Partner übermitteln.",
+        "intro": "Diese Erklärung beschreibt, wie Khan Travel Services e.K. mit den personenbezogenen Daten umgeht, die Sie uns bei Ihrer Bewerbung als B2B-Partner übermitteln.",
         "last_updated": "Stand: :date",
         "date": "24. September 2026",
         "toc": "Auf dieser Seite",
@@ -247,7 +248,8 @@
             "title": "1. Verantwortlicher",
             "intro": "Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten auf dieser Website ist:",
             "website": "Website",
-            "email": "E-Mail"
+            "email": "E-Mail",
+            "address": "Anschrift"
         },
         "data": {
             "title": "2. Welche Daten wir erheben",
@@ -288,7 +290,7 @@
         },
         "recipients": {
             "title": "4. Wer Ihre Daten erhält",
-            "intro": "Ihre Bewerbung sieht nur das für Partnerbewerbungen zuständige Team von Khan Travel Services. Außerdem arbeiten wir mit sorgfältig ausgewählten Dienstleistern zusammen, die Daten in unserem Auftrag verarbeiten:",
+            "intro": "Ihre Bewerbung sieht nur das für Partnerbewerbungen zuständige Team von Khan Travel Services e.K. Außerdem arbeiten wir mit sorgfältig ausgewählten Dienstleistern zusammen, die Daten in unserem Auftrag verarbeiten:",
             "items": [
                 {
                     "strong": "Hosting:",
@@ -339,20 +341,36 @@
         },
         "cta": {
             "title": "Bereit für Ihre Bewerbung?",
-            "text": "Werden Sie in wenigen Minuten B2B-Partner von Khan Travel Services.",
+            "text": "Werden Sie in wenigen Minuten B2B-Partner von Khan Travel Services e.K.",
             "button": "Partner werden"
+        },
+        "imprint": {
+            "title": "Impressum",
+            "email_label": "E-Mail",
+            "director_label": "Geschäftsführer",
+            "register_label": "Handelsregister",
+            "vat_label": "USt-IdNr.",
+            "liability_title": "Haftungshinweis",
+            "liability_text": "Wir prüfen die Informationen auf unserer Website sorgfältig. Dennoch können wir keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen. Für die Inhalte externer Websites, auf die wir verlinken, sind wir nicht verantwortlich. Für deren Inhalte sind ausschließlich die jeweiligen Betreiber verantwortlich."
+        },
+        "protection": {
+            "title": "Datenschutz",
+            "paragraphs": [
+                "Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.",
+                "Mit dieser Erklärung informieren wir Sie über Art, Umfang und Zweck der Erhebung und Verwendung personenbezogener Daten auf unserer Website."
+            ]
         }
     },
     "email": {
         "program": "B2B-Partnerprogramm",
-        "copyright": "© :year Khan Travel Services. Alle Rechte vorbehalten.",
+        "copyright": "© :year Khan Travel Services e.K. Alle Rechte vorbehalten.",
         "confirmation": {
-            "subject": "Wir haben Ihre B2B-Partnerbewerbung bei Khan Travel Services erhalten",
+            "subject": "Wir haben Ihre B2B-Partnerbewerbung bei Khan Travel Services e.K. erhalten",
             "preheader": "Ihre Bewerbung für :company wird geprüft. Wir melden uns zu den nächsten Schritten.",
             "eyebrow": "Partnerbewerbung",
             "heading": "Bewerbung erhalten",
             "hello": "Hallo :name,",
-            "thanks": "vielen Dank für Ihr Interesse an einer B2B-Partnerschaft mit Khan Travel Services.",
+            "thanks": "vielen Dank für Ihr Interesse an einer B2B-Partnerschaft mit Khan Travel Services e.K.",
             "received": "Wir haben Ihre Partnerbewerbung für :company erfolgreich erhalten.",
             "review": "Unser Team prüft Ihre Angaben und meldet sich bei Ihnen zu den nächsten Schritten.",
             "status_label": "Status der Bewerbung",
@@ -364,14 +382,23 @@
             "next": [
                 "Unser Team prüft Ihre Bewerbung.",
                 "Wir melden uns bei Ihnen zu den nächsten Schritten.",
-                "Nach der Freigabe kann Ihr Team die Khan Travel Services B2B-Plattform nutzen."
+                "Nach der Freigabe kann Ihr Team die Khan Travel Services e.K. B2B-Plattform nutzen."
             ],
             "signoff": "Vielen Dank,",
-            "team": "Ihr Khan Travel Services Team",
-            "footer_note": "Sie erhalten diese E-Mail, weil mit dieser Adresse eine B2B-Partnerschaft bei Khan Travel Services beantragt wurde. Falls Sie das nicht waren, antworten Sie einfach auf diese E-Mail."
+            "team": "Ihr Khan Travel Services e.K. Team",
+            "footer_note": "Sie erhalten diese E-Mail, weil mit dieser Adresse eine B2B-Partnerschaft bei Khan Travel Services e.K. beantragt wurde. Falls Sie das nicht waren, antworten Sie einfach auf diese E-Mail."
         }
     },
     "formats": {
         "datetime": "d.m.Y, H:i"
+    },
+    "company": {
+        "name": "Khan Travel Services e.K.",
+        "business": "Reisebüro / Flugticket-Großhandel",
+        "street": "Weingartenstr. 34b",
+        "city": "65795 Hattersheim am Main",
+        "director": "Mirzaib Khan",
+        "register": "Amtsgericht Frankfurt am Main, HRA 54562",
+        "vat": "DE292925905"
     }
 }

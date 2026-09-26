@@ -71,8 +71,8 @@ $mainSiteUrl = rtrim((string) env('MAIN_SITE_URL', ''), '/');
 
 return [
     'app' => [
-        'name'               => 'Khan Travel Services',
-        'platform'           => 'Khan Travel Services',
+        'name'               => 'Khan Travel Services e.K.',
+        'platform'           => 'Khan Travel Services e.K.',
         'env'                => env('APP_ENV', 'production'),
         'debug'              => env_bool('APP_DEBUG'),
         'url'                => $appUrl,
@@ -97,7 +97,7 @@ return [
         'resend_api_key'   => env('RESEND_API_KEY', ''),
         'resend_api_url'   => rtrim((string) env('RESEND_API_URL', 'https://api.resend.com'), '/'),
         'from'             => env('MAIL_FROM') ?? env('MAIL_FROM_ADDRESS', ''),
-        'from_name'        => env('MAIL_FROM_NAME', 'Khan Travel Services'),
+        'from_name'        => env('MAIL_FROM_NAME', 'Khan Travel Services e.K.'),
         'reply_to'         => env('MAIL_REPLY_TO', ''),
         'admin_email'      => env('ADMIN_EMAIL', ''),
         // Empty → the logo is embedded in each email as an inline (CID) image.

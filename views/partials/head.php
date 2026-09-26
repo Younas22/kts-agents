@@ -31,7 +31,7 @@ $langUrl       = static fn (string $code): string => $code === default_language(
 <?php endif; ?>
 <?php endif; ?>
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Khan Travel Services">
+    <meta property="og:site_name" content="Khan Travel Services e.K.">
     <meta property="og:locale" content="<?= e(current_language()) ?>">
     <meta property="og:title" content="<?= e($meta['title']) ?>">
     <meta property="og:description" content="<?= e($meta['description']) ?>">

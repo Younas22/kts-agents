@@ -8,9 +8,10 @@
 $sectionBase  = url('become-a-partner');
 $mainSite     = (string) config('app.main_site_url');
 $contactEmail = (string) (config('app.contact_email') ?: config('mail.reply_to'));
-$emailLink    = $contactEmail !== '' ? '<a href="mailto:' . e($contactEmail) . '">' . e($contactEmail) . '</a>' : '';
+// Shown as plain text "info(at)kts-agents.de" – no mailto link.
+$emailText    = $contactEmail !== '' ? '<strong>' . e(display_email($contactEmail)) . '</strong>' : '';
 
-$sectionIds = ['who', 'data', 'purpose', 'recipients', 'cookies', 'retention', 'rights', 'contact'];
+$sectionIds = ['imprint', 'protection', 'who', 'data', 'purpose', 'recipients', 'cookies', 'retention', 'rights', 'contact'];
 
 /** Bold lead-in + text list items ([{strong, text}]). */
 $richList = static function (string $key): string {
@@ -48,13 +49,41 @@ require APP_ROOT . '/views/partials/head.php';
 
         <article class="max-w-3xl space-y-12 text-[16px] leading-[1.75] text-ink-soft [&_a]:font-medium [&_a]:text-brand-600 [&_a]:underline [&_a]:decoration-brand-200 [&_a]:underline-offset-2 hover:[&_a]:decoration-brand-500 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:tracking-[-0.01em] [&_h2]:text-ink [&_h3]:mt-6 [&_h3]:font-semibold [&_h3]:text-ink [&_li]:pl-1 [&_p]:mt-3 [&_strong]:font-semibold [&_strong]:text-ink [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">
 
+            <section id="imprint">
+                <h2><?= te('privacy.imprint.title') ?></h2>
+                <p>
+                    <strong><?= te('company.name') ?></strong><br>
+                    <?= te('company.business') ?>
+                </p>
+                <p>
+                    <?= te('company.street') ?>, <?= te('company.city') ?><br>
+                    <?php if ($emailText !== ''): ?><?= te('privacy.imprint.email_label') ?>: <?= $emailText ?><?php endif; ?>
+                </p>
+                <p><?= te('privacy.imprint.director_label') ?>: <?= te('company.director') ?></p>
+                <p>
+                    <?= te('privacy.imprint.register_label') ?>: <?= te('company.register') ?><br>
+                    <?= te('privacy.imprint.vat_label') ?>: <?= te('company.vat') ?>
+                </p>
+                <h3><?= te('privacy.imprint.liability_title') ?></h3>
+                <p><?= te('privacy.imprint.liability_text') ?></p>
+            </section>
+
+            <section id="protection">
+                <h2><?= te('privacy.protection.title') ?></h2>
+                <?php foreach (tl('privacy.protection.paragraphs') as $paragraph): ?>
+                    <p><?= e($paragraph) ?></p>
+                <?php endforeach; ?>
+            </section>
+
             <section id="who">
                 <h2><?= te('privacy.who.title') ?></h2>
                 <p><?= te('privacy.who.intro') ?></p>
                 <p>
-                    <strong>Khan Travel Services</strong><br>
+                    <strong><?= te('company.name') ?></strong><br>
+                    <?= te('company.street') ?><br>
+                    <?= te('company.city') ?><br>
                     <?php if ($mainSite !== ''): ?><?= te('privacy.who.website') ?>: <a href="<?= e($mainSite) ?>"><?= e(preg_replace('#^https?://#', '', $mainSite)) ?></a><br><?php endif; ?>
-                    <?php if ($emailLink !== ''): ?><?= te('privacy.who.email') ?>: <?= $emailLink ?><?php endif; ?>
+                    <?php if ($emailText !== ''): ?><?= te('privacy.who.email') ?>: <?= $emailText ?><?php endif; ?>
                 </p>
             </section>
 
@@ -111,7 +140,7 @@ require APP_ROOT . '/views/partials/head.php';
 
             <section id="contact">
                 <h2><?= te('privacy.contact.title') ?></h2>
-                <p><?= th('privacy.contact.text', ['email' => $emailLink]) ?></p>
+                <p><?= th('privacy.contact.text', ['email' => $emailText]) ?></p>
                 <p><?= te('privacy.contact.update') ?></p>
             </section>
 

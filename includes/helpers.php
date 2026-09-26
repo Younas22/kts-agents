@@ -63,6 +63,12 @@ function absolute_url(string $path = ''): string
     return $root . '/' . ltrim($path, '/');
 }
 
+/** Email as shown on public pages: "info@kts-agents.de" → "info(at)kts-agents.de" (plain text, no mailto link). */
+function display_email(string $email): string
+{
+    return str_replace('@', '(at)', $email);
+}
+
 /** Privacy Policy link: PRIVACY_POLICY_URL if set, otherwise this app's /privacy-policy page. */
 function privacy_policy_url(): string
 {

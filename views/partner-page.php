@@ -1,6 +1,6 @@
 <?php
 /**
- * Khan Travel Services B2B partner landing page. All text comes from lang/{code}.json.
+ * Khan Travel Services e.K. B2B partner landing page. All text comes from lang/{code}.json.
  *
  * @var array       $meta
  * @var array       $errors  field => message (server-side validation, no-JS fallback)
@@ -206,7 +206,7 @@ require APP_ROOT . '/views/partials/head.php';
 
                 <?php if ($contactEmail !== ''): ?>
                     <p class="mt-8 rounded-xl border border-line bg-surface p-4 text-[15px] leading-relaxed text-ink-muted">
-                        <?= th('apply.contact', ['email' => '<a class="font-semibold text-brand-600 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-500" href="mailto:' . e($contactEmail) . '">' . e($contactEmail) . '</a>']) ?>
+                        <?= th('apply.contact', ['email' => '<span class="font-semibold text-ink">' . e(display_email($contactEmail)) . '</span>']) ?>
                     </p>
                 <?php endif; ?>
             </div>

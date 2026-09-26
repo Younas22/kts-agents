@@ -23,6 +23,7 @@ $mainSite    = (string) config('app.main_site_url');
                 <li><a class="hover:text-brand-600" href="<?= e($sectionBase) ?>#benefits"><?= te('nav.benefits') ?></a></li>
                 <li><a class="hover:text-brand-600" href="<?= e($sectionBase) ?>#how-it-works"><?= te('nav.how') ?></a></li>
                 <li><a class="hover:text-brand-600" href="<?= e($sectionBase) ?>#apply"><?= te('nav.apply') ?></a></li>
+                <li><a class="hover:text-brand-600" href="<?= e($privacyUrl) ?>#imprint"><?= te('footer.imprint') ?></a></li>
                 <li><a class="hover:text-brand-600" href="<?= e($privacyUrl) ?>"><?= te('footer.privacy') ?></a></li>
 <?php if ($mainSite !== ''): ?>
                 <li><a class="hover:text-brand-600" href="<?= e($mainSite) ?>"><?= te('footer.website') ?></a></li>
