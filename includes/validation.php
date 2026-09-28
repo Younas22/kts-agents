@@ -6,14 +6,17 @@
 
 declare(strict_types=1);
 
-/** Allowed "previous contact" values (stored in users.previous_contact). Labels: form.previous_contact.options.* */
-const PREVIOUS_CONTACT_OPTIONS = ['none', 'sales_team', 'business_development', 'support_team', 'other'];
+/**
+ * "Previous contact" values offered in the form and accepted on submit (stored in users.previous_contact).
+ * Labels: form.previous_contact.options.* – "business_development" is hidden from the form but keeps its
+ * label so older applications that used it still display correctly.
+ */
+const PREVIOUS_CONTACT_OPTIONS = ['none', 'sales_team', 'support_team', 'other'];
 
 function previous_contact_label(?string $key, ?string $lang = null): string
 {
-    return in_array($key, PREVIOUS_CONTACT_OPTIONS, true)
-        ? (string) t('form.previous_contact.options.' . $key, [], $lang)
-        : 'Not specified';
+    $label = is_string($key) && $key !== '' ? t('form.previous_contact.options.' . $key, [], $lang) : null;
+    return is_string($label) && $label !== 'form.previous_contact.options.' . $key ? $label : 'Not specified';
 }
 
 /** Trim, remove control/invisible characters and collapse internal whitespace. */

@@ -155,6 +155,7 @@
             "options": {
                 "none": "Ich hatte noch keinen Kontakt",
                 "sales_team": "Vertrieb",
+                "business_development": "Business Development",
                 "support_team": "Support-Team",
                 "other": "Sonstiges"
             }
