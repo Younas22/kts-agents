@@ -277,3 +277,55 @@ The web server needs write permission on `lang/languages.json`.
 
 - Edit a text: change it in `lang/en.json` / `lang/de.json` (keep the keys and `:placeholders` such as `:email`, `:company`, `:year`).
 - Add a language: copy `lang/en.json` to e.g. `lang/fr.json`, translate it, add `"fr": { "name": "French", "native": "Français", "active": false }` to `lang/languages.json`, then activate it on `/language-settings`. The settings page lists any missing texts.
+
+---
+
+## 12. Live with Laravel (travelbpanel_v3) on the same domain
+
+Goal: `https://kts-agents.de/` shows this landing page (the agent sign-up); **everything else** (`/agent/login`, `/agent/dashboard`, `/admin/…`) is the Laravel system. Locally the two projects stay separate.
+
+### Folder layout on the server
+
+```
+/home/<user>/travelbpanel_v3/          ← Laravel project (not public)
+/home/<user>/travelbpanel_v3/public/   ← DOCUMENT ROOT of kts-agents.de
+/home/<user>/travelbpanel_v3/public/kts/   ← this landing app (everything except node_modules/ and src/)
+```
+
+### 1. Upload
+Upload this project into `public/kts/` of the Laravel project (without `node_modules/` and `src/`). Its own `.htaccess` keeps `.env`, `config/`, `includes/`, `lang/`, `storage/` etc. private.
+
+### 2. `public/kts/.env`
+```
+APP_URL=https://kts-agents.de
+APP_PAGE_BASE=/
+AGENT_LOGIN_URL=/agent/login
+MAIN_SITE_URL=https://kts-agents.de
+```
+(plus the database, Resend and other values as described above).
+
+### 3. `public/kts/.htaccess`
+Change the two ErrorDocument lines to the subfolder:
+```
+ErrorDocument 404 /kts/404.php
+ErrorDocument 403 /kts/404.php
+```
+
+### 4. Laravel `public/.htaccess`
+Add these lines right after `RewriteEngine On` (before Laravel's own rules):
+```
+# --- Khan Travel Services landing page (files in public/kts) ---
+RewriteRule ^$ kts/index.php [L]
+RewriteRule ^become-a-partner/?$ kts/partner.php [L,QSA]
+RewriteRule ^privacy-policy/?$ kts/privacy.php [L,QSA]
+RewriteRule ^language-settings/?$ kts/language-settings.php [L,QSA]
+```
+Result: `/`, `/privacy-policy`, `/language-settings` → landing app. Every other URL → Laravel. `/kts/…` page URLs redirect to the clean URLs.
+
+### 5. Laravel `.env`
+`APP_URL=https://kts-agents.de`, then `php artisan config:clear`.
+
+### 6. Laravel pages only for logged-in users
+Done in the Laravel project (not here): all Laravel routes except login / logout / password-reset should use the `auth` middleware, and guests are redirected to `/agent/login`. Laravel's own agent registration (`/agent/register`) can then redirect to `/`, because sign-up now happens on this landing page.
+
+Tested with a simulated Laravel `public/` folder: landing pages, Laravel pass-through, blocked private files, assets and form submission (CSRF) all worked.

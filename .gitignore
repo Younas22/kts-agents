@@ -5,3 +5,5 @@ storage/cache/ratelimit/*
 storage/mail-preview/*
 !storage/**/.gitkeep
 !storage/.htaccess
+.env.local
+.env.live

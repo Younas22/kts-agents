@@ -213,7 +213,7 @@ require APP_ROOT . '/views/partials/head.php';
 
             <div class="min-w-0 rounded-2xl border border-line bg-white shadow-card">
                 <div id="form-panel"<?= $success ? ' hidden' : '' ?>>
-                    <form id="partner-form" class="relative p-5 sm:p-8" action="<?= e(url('become-a-partner')) ?>" method="post" novalidate
+                    <form id="partner-form" class="relative p-5 sm:p-8" action="<?= e(home_url()) ?>" method="post" novalidate
                           data-captcha="<?= $captchaOn ? 'on' : 'off' ?>">
                         <?= csrf_field() ?>
                         <input type="hidden" name="lang" value="<?= e(current_language()) ?>">

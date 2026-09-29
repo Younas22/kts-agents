@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------
 # Khan Travel – B2B Partner Registration (Apache 2.4, mod_rewrite)
-# LOCAL version – project at http://localhost/kts-agents
-# Use: copy .htaccess.local .htaccess
+# LIVE version – files in Laravel public/kts (https://kts-agents.de)
+# Use: upload as public/kts/.htaccess on the server.
 # ------------------------------------------------------------------
 
 Options -Indexes -MultiViews
@@ -10,9 +10,9 @@ DirectoryIndex index.php
 # Custom 404 for anything Apache itself rejects.
 # Path is from the DOCUMENT ROOT: if the app lives in a sub-folder, prefix it
 # (e.g. "ErrorDocument 404 /kts-agents/404.php").
-ErrorDocument 404 /kts-agents/404.php
+ErrorDocument 404 /kts/404.php
 # Denied files (.env etc.) also get the 404 page, so their existence is not revealed.
-ErrorDocument 403 /kts-agents/404.php
+ErrorDocument 403 /kts/404.php
 
 # Never serve dotfiles (.env, .git, .htaccess) or build/docs files.
 <FilesMatch "^\.">

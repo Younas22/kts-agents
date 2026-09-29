@@ -32,10 +32,10 @@ function e(mixed $value): string
 }
 
 /**
- * URL path prefix of the app (e.g. "" in production or "/kts-agents" locally),
- * derived from the executing script so the app works in any folder.
+ * Folder the app files are served from (e.g. "/kts-agents" locally, "/kts" inside Laravel's public/ live).
+ * Used for files: CSS, JS, images, fonts, favicon.
  */
-function base_path(): string
+function files_base_path(): string
 {
     static $base = null;
     if ($base === null) {
@@ -45,10 +45,32 @@ function base_path(): string
     return $base;
 }
 
-/** Root-relative URL inside the app. */
+/**
+ * URL prefix of the pages (/, /privacy-policy, …). Same as the files folder, unless APP_PAGE_BASE is set –
+ * e.g. APP_PAGE_BASE=/ when the app lives in a subfolder of Laravel's public/ but its pages are rewritten to the domain root.
+ */
+function base_path(): string
+{
+    $override = config('app.page_base');
+    return is_string($override) ? rtrim($override, '/') : files_base_path();
+}
+
+/** Root-relative page URL, e.g. url('privacy-policy'). */
 function url(string $path = ''): string
 {
     return base_path() . '/' . ltrim($path, '/');
+}
+
+/** The landing page (home). */
+function home_url(): string
+{
+    return url('');
+}
+
+/** URL of a file inside the app folder (not versioned), e.g. file_url('favicon.ico'). */
+function file_url(string $path): string
+{
+    return files_base_path() . '/' . ltrim($path, '/');
 }
 
 /** Absolute URL using APP_URL (falls back to the current host). */
@@ -81,7 +103,7 @@ function asset(string $path): string
 {
     $file    = APP_ROOT . '/assets/' . ltrim($path, '/');
     $version = is_file($file) ? (string) filemtime($file) : '1';
-    return url('assets/' . ltrim($path, '/')) . '?v=' . $version;
+    return file_url('assets/' . ltrim($path, '/')) . '?v=' . $version;
 }
 
 function is_https(): bool

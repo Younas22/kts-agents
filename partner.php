@@ -1,6 +1,7 @@
 <?php
 /**
- * /become-a-partner – Khan Travel Services e.K. B2B partner landing page and application endpoint.
+ * Home page (/) – Khan Travel Services e.K. B2B partner landing page and application endpoint.
+ * Served through index.php; old /become-a-partner and *.php URLs redirect here.
  *
  * GET  → landing page
  * POST → process application (JSON for fetch requests, redirect/re-render without JS)
@@ -12,11 +13,14 @@ require __DIR__ . '/includes/bootstrap.php';
 
 send_security_headers();
 
-// Keep ".php" out of public URLs: /partner.php → /become-a-partner
-$requestPath = (string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-if (str_ends_with(strtolower($requestPath), '.php')) {
+// The landing page lives at "/". Old URLs (/become-a-partner, /partner.php, /index.php) redirect there.
+$requestPath = strtolower(rtrim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/'));
+if (in_array($_SERVER['REQUEST_METHOD'] ?? 'GET', ['GET', 'HEAD'], true)
+    && (str_ends_with($requestPath, '.php') || str_ends_with($requestPath, '/become-a-partner')
+        // live inside Laravel's public/kts: /kts/ itself → the page at the domain root
+        || (base_path() !== files_base_path() && $requestPath === strtolower(files_base_path())))) {
     $query = (string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_QUERY);
-    redirect(url('become-a-partner') . ($query !== '' ? '?' . $query : ''), 301);
+    redirect(home_url() . ($query !== '' ? '?' . $query : ''), 301);
 }
 
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
@@ -44,7 +48,7 @@ if ($method === 'POST') {
     // No-JS fallback: Post/Redirect/Get on success, re-render with errors otherwise.
     if ($result['payload']['ok']) {
         $_SESSION['partner_application_submitted'] = true;
-        redirect(url('become-a-partner') . '?lang=' . current_language() . '#apply', 303);
+        redirect(home_url() . '?lang=' . current_language() . '#apply', 303);
     }
 
     http_response_code($result['status']);
@@ -65,7 +69,7 @@ if ($method === 'POST') {
 $meta = [
     'title'       => t('meta.partner_title'),
     'description' => t('meta.partner_description'),
-    'canonical'   => config('app.url') !== '' ? absolute_url('become-a-partner') : '',
+    'canonical'   => config('app.url') !== '' ? absolute_url('') : '',
 ];
 
 require APP_ROOT . '/views/partner-page.php';

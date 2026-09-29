@@ -11,8 +11,8 @@ http_response_code(404);
 send_security_headers();
 
 $mainSite    = (string) config('app.main_site_url');
-$homeUrl     = $mainSite !== '' ? $mainSite : url('become-a-partner');
-$sectionBase = url('become-a-partner');
+$homeUrl     = $mainSite !== '' ? $mainSite : home_url();
+$sectionBase = home_url();
 
 $meta = [
     'title'       => t('meta.notfound_title'),
@@ -39,7 +39,7 @@ require APP_ROOT . '/views/partials/head.php';
 
         <div class="fade-up fade-up-delay mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <a href="<?= e($homeUrl) ?>" class="btn-primary h-12 px-6 text-base"><?= te('notfound.back') ?></a>
-            <a href="<?= e(url('become-a-partner')) ?>" class="btn-secondary h-12 px-6 text-base"><?= te('notfound.cta') ?></a>
+            <a href="<?= e(home_url()) ?>" class="btn-secondary h-12 px-6 text-base"><?= te('notfound.cta') ?></a>
         </div>
     </div>
 </main>

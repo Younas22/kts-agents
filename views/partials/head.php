@@ -35,9 +35,9 @@ $langUrl       = static fn (string $code): string => $code === default_language(
     <meta property="og:locale" content="<?= e(current_language()) ?>">
     <meta property="og:title" content="<?= e($meta['title']) ?>">
     <meta property="og:description" content="<?= e($meta['description']) ?>">
-    <link rel="icon" href="<?= e(url('favicon.ico')) ?>" sizes="48x48">
+    <link rel="icon" href="<?= e(file_url('favicon.ico')) ?>" sizes="48x48">
     <link rel="icon" type="image/png" href="<?= e(asset('images/favicon-32.png')) ?>" sizes="32x32">
     <link rel="apple-touch-icon" href="<?= e(asset('images/apple-touch-icon.png')) ?>">
-    <link rel="preload" href="<?= e(url('assets/fonts/inter-latin-var.woff2')) ?>" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<?= e(file_url('assets/fonts/inter-latin-var.woff2')) ?>" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="<?= e(asset('css/app.css')) ?>">
 </head>

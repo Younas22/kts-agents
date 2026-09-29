@@ -151,7 +151,7 @@ function send_partner_application_emails(array $application): void
 
     $common = [
         'logo_url'     => $logoUrl,
-        'app_url'      => absolute_url('become-a-partner'),
+        'app_url'      => absolute_home_url(),
         'main_site'    => (string) config('app.main_site_url'),
         'year'         => date('Y'),
     ];

@@ -5,7 +5,7 @@
  * @var array $meta
  */
 
-$sectionBase  = url('become-a-partner');
+$sectionBase  = home_url();
 $mainSite     = (string) config('app.main_site_url');
 $contactEmail = (string) (config('app.contact_email') ?: config('mail.reply_to'));
 // Shown as plain text "info(at)kts-agents.de" – no mailto link.
@@ -147,7 +147,7 @@ require APP_ROOT . '/views/partials/head.php';
             <div class="rounded-xl border border-line bg-surface p-5 sm:p-6">
                 <p class="!mt-0 font-semibold text-ink"><?= te('privacy.cta.title') ?></p>
                 <p class="!mt-1 text-[15px]"><?= te('privacy.cta.text') ?></p>
-                <a href="<?= e(url('become-a-partner')) ?>#apply" class="btn-primary mt-4 h-11 px-5 !text-white !no-underline"><?= te('privacy.cta.button') ?></a>
+                <a href="<?= e(home_url()) ?>#apply" class="btn-primary mt-4 h-11 px-5 !text-white !no-underline"><?= te('privacy.cta.button') ?></a>
             </div>
         </article>
     </div>
