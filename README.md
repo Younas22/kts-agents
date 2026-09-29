@@ -282,50 +282,48 @@ The web server needs write permission on `lang/languages.json`.
 
 ## 12. Live with Laravel (travelbpanel_v3) on the same domain
 
-Goal: `https://kts-agents.de/` shows this landing page (the agent sign-up); **everything else** (`/agent/login`, `/agent/dashboard`, `/admin/…`) is the Laravel system. Locally the two projects stay separate.
+| URL | Who handles it |
+|---|---|
+| `/become-a-partner` | this landing app (agent sign-up) |
+| `/privacy-policy`, `/language-settings` | this landing app |
+| `/` | Laravel: logged in → home page; guest → redirect to `/become-a-partner` |
+| `/login` and everything else | Laravel (only after login, B2B mode) |
 
-### Folder layout on the server
+Locally the two projects stay separate.
+
+### Folder layout on Hostinger (whole Laravel project in `public_html`)
 
 ```
-/home/<user>/travelbpanel_v3/          ← Laravel project (not public)
-/home/<user>/travelbpanel_v3/public/   ← DOCUMENT ROOT of kts-agents.de
-/home/<user>/travelbpanel_v3/public/kts/   ← this landing app (everything except node_modules/ and src/)
+public_html/                 ← Laravel project root (app/, routes/, vendor/, .env …)
+public_html/.htaccess        ← sends every request into public/
+public_html/public/          ← Laravel public folder
+public_html/public/kts/      ← THIS landing app (without node_modules/ and src/)
 ```
 
 ### 1. Upload
-Upload this project into `public/kts/` of the Laravel project (without `node_modules/` and `src/`). Its own `.htaccess` keeps `.env`, `config/`, `includes/`, `lang/`, `storage/` etc. private.
+Upload this project into `public_html/public/kts/`. Rename `.env.live` → `.env` and `.htaccess.live` → `.htaccess` there.
 
-### 2. `public/kts/.env`
+### 2. `public_html/.htaccess` (Laravel root, if not there yet)
 ```
-APP_URL=https://kts-agents.de
-APP_PAGE_BASE=/
-AGENT_LOGIN_URL=/agent/login
-MAIN_SITE_URL=https://kts-agents.de
-```
-(plus the database, Resend and other values as described above).
-
-### 3. `public/kts/.htaccess`
-Change the two ErrorDocument lines to the subfolder:
-```
-ErrorDocument 404 /kts/404.php
-ErrorDocument 403 /kts/404.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
 ```
 
-### 4. Laravel `public/.htaccess`
-Add these lines right after `RewriteEngine On` (before Laravel's own rules):
+### 3. `public_html/public/.htaccess` (Laravel)
+Add right after `RewriteEngine On`, before Laravel's own rules:
 ```
 # --- Khan Travel Services landing page (files in public/kts) ---
-RewriteRule ^$ kts/index.php [L]
 RewriteRule ^become-a-partner/?$ kts/partner.php [L,QSA]
 RewriteRule ^privacy-policy/?$ kts/privacy.php [L,QSA]
 RewriteRule ^language-settings/?$ kts/language-settings.php [L,QSA]
 ```
-Result: `/`, `/privacy-policy`, `/language-settings` → landing app. Every other URL → Laravel. `/kts/…` page URLs redirect to the clean URLs.
 
-### 5. Laravel `.env`
-`APP_URL=https://kts-agents.de`, then `php artisan config:clear`.
-
-### 6. Laravel pages only for logged-in users
-Done in the Laravel project (not here): all Laravel routes except login / logout / password-reset should use the `auth` middleware, and guests are redirected to `/agent/login`. Laravel's own agent registration (`/agent/register`) can then redirect to `/`, because sign-up now happens on this landing page.
+### 4. Laravel: B2B mode + guest redirect
+- Admin panel → settings: `business_model` = **b2b**. `B2BGateMiddleware` then requires login for every Laravel page.
+- In `app/Http/Middleware/B2BGateMiddleware.php`, guests go to the landing page instead of Laravel's `/agent/register` (see the change described to the owner).
+- Laravel `.env`: `APP_URL=https://kts-agents.de`, then `php artisan config:clear`.
 
 Tested with a simulated Laravel `public/` folder: landing pages, Laravel pass-through, blocked private files, assets and form submission (CSRF) all worked.

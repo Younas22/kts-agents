@@ -64,7 +64,7 @@ function url(string $path = ''): string
 /** The landing page (home). */
 function home_url(): string
 {
-    return url('');
+    return url('become-a-partner');
 }
 
 /** URL of a file inside the app folder (not versioned), e.g. file_url('favicon.ico'). */

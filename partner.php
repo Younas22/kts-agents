@@ -13,11 +13,11 @@ require __DIR__ . '/includes/bootstrap.php';
 
 send_security_headers();
 
-// The landing page lives at "/". Old URLs (/become-a-partner, /partner.php, /index.php) redirect there.
+// The landing page lives at /become-a-partner. Direct file URLs (/partner.php, /index.php) redirect there.
 $requestPath = strtolower(rtrim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/'));
 if (in_array($_SERVER['REQUEST_METHOD'] ?? 'GET', ['GET', 'HEAD'], true)
-    && (str_ends_with($requestPath, '.php') || str_ends_with($requestPath, '/become-a-partner')
-        // live inside Laravel's public/kts: /kts/ itself → the page at the domain root
+    && (str_ends_with($requestPath, '.php')
+        // live inside Laravel's public/kts: /kts/ itself → the clean page URL
         || (base_path() !== files_base_path() && $requestPath === strtolower(files_base_path())))) {
     $query = (string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_QUERY);
     redirect(home_url() . ($query !== '' ? '?' . $query : ''), 301);
@@ -69,7 +69,7 @@ if ($method === 'POST') {
 $meta = [
     'title'       => t('meta.partner_title'),
     'description' => t('meta.partner_description'),
-    'canonical'   => config('app.url') !== '' ? absolute_url('') : '',
+    'canonical'   => config('app.url') !== '' ? absolute_url('become-a-partner') : '',
 ];
 
 require APP_ROOT . '/views/partner-page.php';
