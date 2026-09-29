@@ -29,11 +29,6 @@ $currentLang = current_language();
         </nav>
 
         <div class="flex flex-none items-center gap-2 sm:gap-3">
-            <?php if ((string) config('app.agent_login_url') !== ''): ?>
-                <a href="<?= e((string) config('app.agent_login_url')) ?>" class="hidden items-center gap-1.5 rounded-lg px-3 py-2 text-[15px] font-semibold text-ink-soft transition-colors hover:bg-surface hover:text-ink sm:inline-flex">
-                    <?= icon('user', 'h-[18px] w-[18px] text-brand-500') ?><?= te('nav.login') ?>
-                </a>
-            <?php endif; ?>
             <?php if (count($languages) > 1): ?>
                 <details class="relative" data-lang-menu>
                     <summary class="flex h-10 cursor-pointer list-none items-center gap-1.5 rounded-lg border border-line bg-white px-2.5 text-sm font-semibold text-ink-soft transition-colors hover:border-brand-200 hover:text-ink sm:h-11 sm:px-3 [&::-webkit-details-marker]:hidden"
