@@ -52,6 +52,12 @@ $currentLang = current_language();
                 </details>
             <?php endif; ?>
 
+            <?php if ((string) config('app.login_url') !== ''): ?>
+                <a href="<?= e((string) config('app.login_url')) ?>" class="btn-secondary h-10 min-h-0 gap-1.5 px-3 text-sm sm:h-11 sm:px-4 sm:text-[15px]">
+                    <?= icon('user', 'hidden h-[18px] w-[18px] text-brand-500 min-[400px]:block') ?><?= te('nav.login') ?>
+                </a>
+            <?php endif; ?>
+
             <a href="<?= e($sectionBase) ?>#apply" class="btn-primary h-10 min-h-0 px-4 text-sm sm:h-11 sm:px-5 sm:text-[15px]">
                 <span class="sm:hidden"><?= te('nav.cta_short') ?></span><span class="hidden sm:inline"><?= te('nav.cta') ?></span>
             </a>

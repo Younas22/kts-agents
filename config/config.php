@@ -77,7 +77,9 @@ return [
         'debug'              => env_bool('APP_DEBUG'),
         'url'                => $appUrl,
         // URL prefix of the pages. Empty = the folder the app is in. "/" = domain root (app inside Laravel's public/).
-        'page_base'          => env('APP_PAGE_BASE'),        'timezone'           => env('APP_TIMEZONE', 'UTC'),
+        'page_base'          => env('APP_PAGE_BASE'),
+        // "Login" button in the top navbar (Laravel login). Empty = button hidden.
+        'login_url'          => env('LOGIN_URL', '/login'),        'timezone'           => env('APP_TIMEZONE', 'UTC'),
         'main_site_url'      => $mainSiteUrl,
         // Empty → this app's own /privacy-policy page.
         'privacy_policy_url' => env('PRIVACY_POLICY_URL', ''),

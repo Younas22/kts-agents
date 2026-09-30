@@ -13,7 +13,8 @@
         "cta": "Partner werden",
         "cta_short": "Bewerben",
         "language": "Sprache",
-        "choose_language": "Sprache wählen"
+        "choose_language": "Sprache wählen",
+        "login": "Anmelden"
     },
     "footer": {
         "label": "Fußzeile",

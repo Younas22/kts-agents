@@ -13,7 +13,8 @@
         "cta": "Become a Partner",
         "cta_short": "Apply",
         "language": "Language",
-        "choose_language": "Choose language"
+        "choose_language": "Choose language",
+        "login": "Login"
     },
     "footer": {
         "label": "Footer",
