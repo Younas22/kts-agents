@@ -84,6 +84,18 @@ function handle_partner_submission(array $input): array
     return ['status' => 200, 'payload' => ['ok' => true]];
 }
 
+/** Whether the users table has a column (cached per request). */
+function users_table_has_column(PDO $pdo, string $column): bool
+{
+    static $columns = null;
+    if ($columns === null) {
+        $columns = array_map('strtolower', $pdo->query(
+            "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'users'"
+        )->fetchAll(PDO::FETCH_COLUMN));
+    }
+    return in_array(strtolower($column), $columns, true);
+}
+
 function email_is_registered(PDO $pdo, string $email): bool
 {
     // users.email uses a case-insensitive collation, so this also catches case variants.
@@ -126,13 +138,24 @@ function create_partner_application(array $data): array
     $now          = date('Y-m-d H:i:s');
     $unusableHash = password_hash(bin2hex(random_bytes(32)), PASSWORD_BCRYPT, ['cost' => 12]);
 
-    $sql = 'INSERT INTO users (
-                user_type, first_name, last_name, company_name, previous_contact, email, phone,
+    // users.previous_contact comes from an optional migration. If the column is missing (migration not run),
+    // the answer is kept in internal_notes instead, so applications never fail because of it.
+    $hasPreviousContact = users_table_has_column($pdo, 'previous_contact');
+    $notes = 'Applied via the B2B partner registration page on ' . $now . ' (' . config('app.timezone') . ').';
+    if (!$hasPreviousContact) {
+        $notes .= ' Previous contact: ' . previous_contact_label($data['previous_contact'], 'en') . '.';
+    }
+
+    $previousColumn = $hasPreviousContact ? 'previous_contact, ' : '';
+    $previousValue  = $hasPreviousContact ? ':previous_contact, ' : '';
+
+    $sql = "INSERT INTO users (
+                user_type, first_name, last_name, company_name, {$previousColumn}email, phone,
                 agent_code, approval_status, status, password, internal_notes, created_at, updated_at
             ) VALUES (
-                \'agent\', :first_name, :last_name, :company_name, :previous_contact, :email, :phone,
-                :agent_code, \'pending\', \'inactive\', :password, :internal_notes, :created_at, :updated_at
-            )';
+                'agent', :first_name, :last_name, :company_name, {$previousValue}:email, :phone,
+                :agent_code, 'pending', 'inactive', :password, :internal_notes, :created_at, :updated_at
+            )";
 
     // Retry if another request took the same agent code at the same moment.
     for ($attempt = 1; ; $attempt++) {
@@ -140,19 +163,22 @@ function create_partner_application(array $data): array
 
         try {
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([
+            $params = [
                 ':first_name'       => $data['first_name'],
                 ':last_name'        => $data['last_name'],
                 ':company_name'     => $data['company_name'],
-                ':previous_contact' => $data['previous_contact'],
                 ':email'            => $data['email'],
                 ':phone'            => $data['phone'],
                 ':agent_code'       => $agentCode,
                 ':password'         => $unusableHash,
-                ':internal_notes'   => 'Applied via the B2B partner registration page on ' . $now . ' (' . config('app.timezone') . ').',
+                ':internal_notes'   => $notes,
                 ':created_at'       => $now,
                 ':updated_at'       => $now,
-            ]);
+            ];
+            if ($hasPreviousContact) {
+                $params[':previous_contact'] = $data['previous_contact'];
+            }
+            $stmt->execute($params);
             break;
         } catch (PDOException $e) {
             if (is_duplicate_key_error($e, 'users_email_unique')) {

@@ -35,8 +35,7 @@ function captcha_verify_url(): string
 function captcha_verify(mixed $response): bool
 {
     if (!captcha_enabled()) {
-        log_warning('Friendly Captcha is not configured – submission accepted without CAPTCHA check.');
-        return true;
+        return true; // CAPTCHA not used (no keys set) – honeypot and rate limit still protect the form
     }
 
     // Empty or sentinel values (".UNSTARTED", ".SOLVING", ".EXPIRED", ...) mean the widget is not done.
